@@ -1,6 +1,13 @@
 package io.github.superjoy0502.cs30tbrpg;
 
-import java.io.*;
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
+
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -43,58 +50,12 @@ public class Main {
                 Character character = new Character();
                 System.out.print("Please enter your character's name >> ");
                 character.name = scanner.nextLine();
-                while (true) {
-                    System.out.print("Please enter your character's height >> ");
-                    String tempHeight = scanner.nextLine().toLowerCase().replaceAll("\\s", "");
-                    if (Pattern.compile("[1-9][0-9]*cm").matcher(tempHeight).matches() ||
-                            Pattern.compile("[1-9][0-9]*ft[0-9]*in").matcher(tempHeight).matches() ||
-                            Pattern.compile("[1-9][0-9]*ft").matcher(tempHeight).matches() ||
-                            Pattern.compile("[1-9][0-9]*in").matcher(tempHeight).matches() ||
-                            Pattern.compile("[1-9][0-9]*'[1-9][0-9]*\"").matcher(tempHeight).matches() ||
-                            Pattern.compile("[1-9][0-9]*'").matcher(tempHeight).matches() ||
-                            Pattern.compile("[1-9][0-9]*\"").matcher(tempHeight).matches()) {
-                        character.height = tempHeight;
-                        break;
-                    } else {
-                        System.out.println("Invalid input.");
-                    }
-                }
-                while (true) {
-                    System.out.print("Please enter your character's weight >> ");
-                    String tempWeight = scanner.nextLine().toLowerCase().replaceAll("\\s", "");
-                    if (Pattern.compile("[1-9][0-9]*kg").matcher(tempWeight).matches() ||
-                            Pattern.compile("[1-9][0-9]*lb").matcher(tempWeight).matches() ||
-                            Pattern.compile("[1-9][0-9]*lbs").matcher(tempWeight).matches()) {
-                        character.weight = tempWeight;
-                        break;
-                    } else {
-                        System.out.println("Invalid input.");
-                    }
-                }
+                getHeight(scanner, character);
+                getWeight(scanner, character);
                 System.out.print("Please enter your character's occupation >> ");
                 character.occupation = scanner.nextLine();
-                while (true) {
-                    System.out.print("Please enter your character's age (Min 15, Max 89) >> ");
-                    try {
-                        character.age = Integer.parseInt(scanner.nextLine());
-                        if (character.age < 15 || character.age > 89) {
-                            System.out.println("Invalid input.");
-                            continue;
-                        }
-                        break;
-                    } catch (Exception e) {
-                        System.out.println("Invalid input.");
-                    }
-                }
-                while (true) {
-                    System.out.print("Please enter your character's sex (M/F) >> ");
-                    character.sex = scanner.nextLine().toLowerCase();
-                    if (character.sex.equals("m") || character.sex.equals("f")) {
-                        break;
-                    } else {
-                        System.out.println("Invalid input.");
-                    }
-                }
+                getAge(scanner, character);
+                getSex(scanner, character);
                 System.out.print("Please enter your character's residence >> ");
                 character.residence = scanner.nextLine();
                 System.out.print("Please enter your character's birthplace >> ");
@@ -143,66 +104,20 @@ public class Main {
                                 character.name = scanner.nextLine();
                                 break;
                             case 2:
-                                while (true) {
-                                    System.out.print("Please enter your character's height >> ");
-                                    String tempHeight = scanner.nextLine().toLowerCase().replaceAll("\\s", "");
-                                    if (Pattern.compile("[1-9][0-9]*cm", Pattern.CASE_INSENSITIVE).matcher(tempHeight).matches() ||
-                                            Pattern.compile("[1-9][0-9]*ft[0-9]*in", Pattern.CASE_INSENSITIVE).matcher(tempHeight).matches() ||
-                                            Pattern.compile("[1-9][0-9]*ft", Pattern.CASE_INSENSITIVE).matcher(tempHeight).matches() ||
-                                            Pattern.compile("[1-9][0-9]*in", Pattern.CASE_INSENSITIVE).matcher(tempHeight).matches() ||
-                                            Pattern.compile("[1-9][0-9]*'[1-9][0-9]\"", Pattern.CASE_INSENSITIVE).matcher(tempHeight).matches() ||
-                                            Pattern.compile("[1-9][0-9]*'", Pattern.CASE_INSENSITIVE).matcher(tempHeight).matches() ||
-                                            Pattern.compile("[1-9][0-9]*\"", Pattern.CASE_INSENSITIVE).matcher(tempHeight).matches()) {
-                                        character.height = tempHeight;
-                                        break;
-                                    } else {
-                                        System.out.println("Invalid input.");
-                                    }
-                                }
+                                getHeight(scanner, character);
                                 break;
                             case 3:
-                                while (true) {
-                                    System.out.print("Please enter your character's weight >> ");
-                                    String tempWeight = scanner.nextLine().toLowerCase().replaceAll("\\s", "");
-                                    if (Pattern.compile("[1-9][0-9]*kg").matcher(tempWeight).matches() ||
-                                            Pattern.compile("[1-9][0-9]*lb").matcher(tempWeight).matches() ||
-                                            Pattern.compile("[1-9][0-9]*lbs").matcher(tempWeight).matches()) {
-                                        character.weight = tempWeight;
-                                        break;
-                                    } else {
-                                        System.out.println("Invalid input.");
-                                    }
-                                }
+                                getWeight(scanner, character);
                                 break;
                             case 4:
                                 System.out.print("Please enter your character's occupation >> ");
                                 character.occupation = scanner.nextLine();
                                 break;
                             case 5:
-                                while (true) {
-                                    System.out.print("Please enter your character's age (Min 15, Max 89) >> ");
-                                    try {
-                                        character.age = Integer.parseInt(scanner.nextLine());
-                                        if (character.age < 15 || character.age > 89) {
-                                            System.out.println("Invalid input.");
-                                            continue;
-                                        }
-                                        break;
-                                    } catch (Exception e) {
-                                        System.out.println("Invalid input.");
-                                    }
-                                }
+                                getAge(scanner, character);
                                 break;
                             case 6:
-                                while (true) {
-                                    System.out.print("Please enter your character's sex (M/F) >> ");
-                                    character.sex = scanner.nextLine().toLowerCase();
-                                    if (character.sex.equals("m") || character.sex.equals("f")) {
-                                        break;
-                                    } else {
-                                        System.out.println("Invalid input.");
-                                    }
-                                }
+                                getSex(scanner, character);
                                 break;
                             case 7:
                                 System.out.print("Please enter your character's residence >> ");
@@ -281,33 +196,26 @@ public class Main {
                 break;
             case 2:
                 // Load a character
-                List<List<String>> characters = new ArrayList<>();
-                try (BufferedReader br = new BufferedReader(new FileReader("resources/characters.csv"))) {
-                    String line;
-                    while ((line = br.readLine()) != null) {
-                        String[] values = line.split(",");
-                        characters.add(Arrays.asList(values));
+                Gson gson = new Gson();
+                Type type = new TypeToken<List<Character>>(){}.getType();
+                try {
+                    List<Character> characters = gson.fromJson(new FileReader("resources/characters.json"), type);
+                    for (int i = 0; i < characters.size(); i++) {
+                        System.out.printf("%d. %s%n", i + 1, characters.get(i).name);
                     }
-                } catch (IOException e) {
-                    throw new RuntimeException(e);
-                }
-                for (int i = 0; i < characters.size(); i++) {
-                    System.out.printf("%d. %s%n", i + 1, characters.get(i).get(0));
-                }
-                System.out.print("Please select a character >> ");
-                int characterIndex = -1;
-                while (true) {
-                    try {
+                    System.out.print("Please select a character >> ");
+                    int characterIndex = -1;
+                    while (true) {
                         characterIndex = Integer.parseInt(scanner.nextLine());
                         if (characterIndex > 0 && characterIndex <= characters.size()) {
                             break;
                         }
-                    } catch (Exception e) {
-                        System.out.println("Invalid input.");
+                        System.out.print("Please select a valid character >> ");
                     }
-                    System.out.print("Please select a valid character >> ");
+                    character = characters.get(characterIndex - 1);
+                } catch (FileNotFoundException e) {
+                    throw new RuntimeException(e);
                 }
-                character = new Character(characters.get(characterIndex - 1));
                 break;
             case 3:
                 // Exit
@@ -320,6 +228,80 @@ public class Main {
                 System.out.println("Invalid input.");
                 start(scanner);
                 break;
+        }
+    }
+
+    private static void getHeight(Scanner scanner, Character character) {
+        while (true) {
+            System.out.print("Please enter your character's height >> ");
+            String tempHeight = scanner.nextLine().replaceAll("\\s", "").toLowerCase();
+            if (
+                // Regex for height in cm
+                    Pattern.compile("[1-9][0-9]*cm").matcher(tempHeight).matches() ||
+                            // Regex for height in ft and in
+                            Pattern.compile("[1-9][0-9]*ft[0-9]*in").matcher(tempHeight).matches() ||
+                            // Regex for height in ft
+                            Pattern.compile("[1-9][0-9]*ft").matcher(tempHeight).matches() ||
+                            // Regex for height in in
+                            Pattern.compile("[1-9][0-9]*in").matcher(tempHeight).matches() ||
+                            // Regex for height in ' and "
+                            Pattern.compile("[1-9][0-9]*'[0-9]*\"").matcher(tempHeight).matches() ||
+                            // Regex for height in '
+                            Pattern.compile("[1-9][0-9]*'").matcher(tempHeight).matches() ||
+                            // Regex for height in "
+                            Pattern.compile("[1-9][0-9]*\"").matcher(tempHeight).matches()) {
+                character.height = tempHeight;
+                break;
+            } else {
+                System.out.println("Invalid input.");
+            }
+        }
+    }
+
+    private static void getWeight(Scanner scanner, Character character) {
+        while (true) {
+            System.out.print("Please enter your character's weight >> ");
+            String tempWeight = scanner.nextLine().replaceAll("\\s", "").toLowerCase();
+            if (
+                // Regex for weight in kg
+                    Pattern.compile("[1-9][0-9]*kg").matcher(tempWeight).matches() ||
+                            // Regex for weight in lb
+                            Pattern.compile("[1-9][0-9]*lb").matcher(tempWeight).matches() ||
+                            // Regex for weight in lbs
+                            Pattern.compile("[1-9][0-9]*lbs").matcher(tempWeight).matches()) {
+                character.weight = tempWeight;
+                break;
+            } else {
+                System.out.println("Invalid input.");
+            }
+        }
+    }
+
+    private static void getAge(Scanner scanner, Character character) {
+        while (true) {
+            System.out.print("Please enter your character's age (Min 15, Max 89) >> ");
+            try {
+                character.age = Integer.parseInt(scanner.nextLine());
+                if (character.age < 15 || character.age > 89) { // Check if age is between 15 and 89
+                    System.out.println("Invalid input.");
+                    continue;
+                }
+                break;
+            } catch (Exception e) {
+                System.out.println("Invalid input.");
+            }
+        }
+    }
+
+    private static void getSex(Scanner scanner, Character character) {
+        while (true) {
+            System.out.print("Please enter your character's sex (M/F) >> ");
+            character.sex = scanner.nextLine().toUpperCase();
+            if (character.sex.equals("M") || character.sex.equals("F")) {
+                break;
+            } else {
+                System.out.println("Invalid input.");
+            }
         }
     }
 

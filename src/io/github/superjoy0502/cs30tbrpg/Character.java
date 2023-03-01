@@ -1,17 +1,14 @@
 package io.github.superjoy0502.cs30tbrpg;
 
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.reflect.TypeToken;
+
 import java.io.*;
+import java.lang.reflect.Type;
 import java.util.List;
-import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 public class Character {
-    public Character() {}
-
-    public Character(List<String> stats) {
-        load(stats);
-    }
-
     public String name;
     public String height;
     public String weight;
@@ -21,7 +18,6 @@ public class Character {
     public String residence;
     public String birthplace;
     public String nationality;
-
     private int STR;
     private int CON;
     private int SIZ;
@@ -31,7 +27,6 @@ public class Character {
     private int POW;
     private int EDU;
     private int LUK;
-
     private int HP;
     private int maxHP;
     private int MP;
@@ -39,6 +34,9 @@ public class Character {
     private int SAN;
     private int maxSAN;
     private String damageBonus;
+    private List<Skill> skills;
+
+    public Character() { }
 
     public void setStats(int STR, int CON, int SIZ, int DEX, int APP, int INT, int POW, int EDU, int LUK, int HP, int MP, int SAN) {
         this.STR = STR;
@@ -84,79 +82,13 @@ public class Character {
         setStats(STR, CON, SIZ, DEX, APP, INT, POW, EDU, LUK, (CON + SIZ) / 10, POW / 5, POW);
     }
 
-    private String convertToCSV() {
-        return Stream.of(name, height, weight, occupation, age, sex, residence, birthplace, nationality,
-                        STR, CON, SIZ, DEX, APP, INT, POW, EDU, LUK,
-                        HP, MP, SAN)
-                .map(String::valueOf)
-                .map(this::escapeSpecialCharacters)
-                .collect(Collectors.joining(","));
-    }
-
-    private String escapeSpecialCharacters(String data) {
-        String escapedData = data.replaceAll("\\R", " ");
-        if (data.contains(",") || data.contains("\"") || data.contains("'")) {
-            data = data.replace("\"", "\"\"");
-            escapedData = "\"" + data + "\"";
-        }
-        return escapedData;
-    }
-
     public void save() {
-        File csvOutputFile = new File("resources/characters.csv");
-        // Append the result of convertToCSV() to the csvOutputFile
-        try (PrintWriter pw = new PrintWriter(new FileWriter(csvOutputFile, true))) {
-            pw.println(convertToCSV());
+        try (Writer writer = new FileWriter("resources/characters.json", true)) {
+            Gson gson = new GsonBuilder().setPrettyPrinting().create();
+            gson.toJson(this, writer);
         } catch (IOException e) {
-            System.out.println("Error saving character: " + e.getMessage());
+            e.printStackTrace();
         }
     }
 
-    private void load(List<String> stats) {
-        for (int i = 0; i < 9; i++) {
-            switch (i) {
-                case 0:
-                    name = stats.get(i);
-                    break;
-                case 1:
-                    height = stats.get(i);
-                    break;
-                case 2:
-                    weight = stats.get(i);
-                    break;
-                case 3:
-                    occupation = stats.get(i);
-                    break;
-                case 4:
-                    age = Integer.parseInt(stats.get(i));
-                    break;
-                case 5:
-                    sex = stats.get(i);
-                    break;
-                case 6:
-                    residence = stats.get(i);
-                    break;
-                case 7:
-                    birthplace = stats.get(i);
-                    break;
-                case 8:
-                    nationality = stats.get(i);
-                    break;
-            }
-        }
-        setStats(
-                Integer.parseInt(stats.get(9)),
-                Integer.parseInt(stats.get(10)),
-                Integer.parseInt(stats.get(11)),
-                Integer.parseInt(stats.get(12)),
-                Integer.parseInt(stats.get(13)),
-                Integer.parseInt(stats.get(14)),
-                Integer.parseInt(stats.get(15)),
-                Integer.parseInt(stats.get(16)),
-                Integer.parseInt(stats.get(17)),
-                Integer.parseInt(stats.get(18)),
-                Integer.parseInt(stats.get(19)),
-                Integer.parseInt(stats.get(20))
-        );
-    }
 }
