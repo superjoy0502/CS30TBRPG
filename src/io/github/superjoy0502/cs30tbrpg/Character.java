@@ -22,36 +22,36 @@ public class Character {
     public String birthplace;
     public String nationality;
 
-    private int strength;
-    private int constitution;
-    private int size;
-    private int dexterity;
-    private int appearance;
-    private int intelligence;
-    private int power;
-    private int education;
-    private int luck;
+    private int STR;
+    private int CON;
+    private int SIZ;
+    private int DEX;
+    private int APP;
+    private int INT;
+    private int POW;
+    private int EDU;
+    private int LUK;
 
-    private int hitPoints;
-    private int maxHitPoints;
-    private int magicPoints;
-    private int maxMagicPoints;
-    private int sanity;
-    private int maxSanity;
+    private int HP;
+    private int maxHP;
+    private int MP;
+    private int maxMP;
+    private int SAN;
+    private int maxSAN;
     private String damageBonus;
 
     public void setStats(int STR, int CON, int SIZ, int DEX, int APP, int INT, int POW, int EDU, int LUK, int HP, int MP, int SAN) {
-        this.strength = STR;
-        this.constitution = CON;
-        this.size = SIZ;
-        this.dexterity = DEX;
-        this.appearance = APP;
-        this.intelligence = INT;
-        this.power = POW;
-        this.education = EDU;
-        this.luck = LUK;
+        this.STR = STR;
+        this.CON = CON;
+        this.SIZ = SIZ;
+        this.DEX = DEX;
+        this.APP = APP;
+        this.INT = INT;
+        this.POW = POW;
+        this.EDU = EDU;
+        this.LUK = LUK;
 
-        int STRSIZ = strength + size;
+        int STRSIZ = this.STR + this.SIZ;
         if (STRSIZ < 65) {
             damageBonus = "-2";
         } else if (STRSIZ < 85) {
@@ -72,12 +72,12 @@ public class Character {
             damageBonus = "5d6";
         }
 
-        maxHitPoints = (constitution + size) / 10;
-        hitPoints = HP;
-        maxMagicPoints = power / 5;
-        magicPoints = MP;
-        maxSanity = power;
-        sanity = SAN;
+        maxHP = (this.CON + this.SIZ) / 10;
+        this.HP = HP;
+        maxMP = this.POW / 5;
+        this.MP = MP;
+        maxSAN = this.POW;
+        this.SAN = SAN;
     }
 
     public void setStats(int STR, int CON, int SIZ, int DEX, int APP, int INT, int POW, int EDU, int LUK) {
@@ -86,8 +86,8 @@ public class Character {
 
     private String convertToCSV() {
         return Stream.of(name, height, weight, occupation, age, sex, residence, birthplace, nationality,
-                        strength, constitution, size, dexterity, appearance, intelligence, power, education, luck,
-                        hitPoints, magicPoints, sanity)
+                        STR, CON, SIZ, DEX, APP, INT, POW, EDU, LUK,
+                        HP, MP, SAN)
                 .map(String::valueOf)
                 .map(this::escapeSpecialCharacters)
                 .collect(Collectors.joining(","));
