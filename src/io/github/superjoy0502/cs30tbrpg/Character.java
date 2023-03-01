@@ -1,10 +1,17 @@
 package io.github.superjoy0502.cs30tbrpg;
 
 import java.io.*;
+import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public class Character {
+    public Character() {}
+
+    public Character(List<String> stats) {
+        load(stats);
+    }
+
     public String name;
     public String height;
     public String weight;
@@ -26,12 +33,14 @@ public class Character {
     private int luck;
 
     private int hitPoints;
+    private int maxHitPoints;
     private int magicPoints;
+    private int maxMagicPoints;
     private int sanity;
+    private int maxSanity;
     private String damageBonus;
-    private int dodge;
 
-    public void setStats(int STR, int CON, int SIZ, int DEX, int APP, int INT, int POW, int EDU, int LUK) {
+    public void setStats(int STR, int CON, int SIZ, int DEX, int APP, int INT, int POW, int EDU, int LUK, int HP, int MP, int SAN) {
         this.strength = STR;
         this.constitution = CON;
         this.size = SIZ;
@@ -63,10 +72,16 @@ public class Character {
             damageBonus = "5d6";
         }
 
-        hitPoints = (constitution + size) / 10;
-        magicPoints = power / 5;
-        sanity = power;
-        dodge = dexterity / 2;
+        maxHitPoints = (constitution + size) / 10;
+        hitPoints = HP;
+        maxMagicPoints = power / 5;
+        magicPoints = MP;
+        maxSanity = power;
+        sanity = SAN;
+    }
+
+    public void setStats(int STR, int CON, int SIZ, int DEX, int APP, int INT, int POW, int EDU, int LUK) {
+        setStats(STR, CON, SIZ, DEX, APP, INT, POW, EDU, LUK, (CON + SIZ) / 10, POW / 5, POW);
     }
 
     private String convertToCSV() {
@@ -93,7 +108,55 @@ public class Character {
         try (PrintWriter pw = new PrintWriter(new FileWriter(csvOutputFile, true))) {
             pw.println(convertToCSV());
         } catch (IOException e) {
-            e.printStackTrace();
+            System.out.println("Error saving character: " + e.getMessage());
         }
+    }
+
+    private void load(List<String> stats) {
+        for (int i = 0; i < 9; i++) {
+            switch (i) {
+                case 0:
+                    name = stats.get(i);
+                    break;
+                case 1:
+                    height = stats.get(i);
+                    break;
+                case 2:
+                    weight = stats.get(i);
+                    break;
+                case 3:
+                    occupation = stats.get(i);
+                    break;
+                case 4:
+                    age = Integer.parseInt(stats.get(i));
+                    break;
+                case 5:
+                    sex = stats.get(i);
+                    break;
+                case 6:
+                    residence = stats.get(i);
+                    break;
+                case 7:
+                    birthplace = stats.get(i);
+                    break;
+                case 8:
+                    nationality = stats.get(i);
+                    break;
+            }
+        }
+        setStats(
+                Integer.parseInt(stats.get(9)),
+                Integer.parseInt(stats.get(10)),
+                Integer.parseInt(stats.get(11)),
+                Integer.parseInt(stats.get(12)),
+                Integer.parseInt(stats.get(13)),
+                Integer.parseInt(stats.get(14)),
+                Integer.parseInt(stats.get(15)),
+                Integer.parseInt(stats.get(16)),
+                Integer.parseInt(stats.get(17)),
+                Integer.parseInt(stats.get(18)),
+                Integer.parseInt(stats.get(19)),
+                Integer.parseInt(stats.get(20))
+        );
     }
 }

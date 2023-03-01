@@ -5,9 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d3444b44-ca99-4cba-b852-3fd47e0396f8" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/resources/characters.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/scenarios/Littlebird.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CS30TBRPG.iml" beforeDir="false" afterPath="$PROJECT_DIR$/CS30TBRPG.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/characters.csv" beforeDir="false" afterPath="$PROJECT_DIR$/resources/characters.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/io/github/superjoy0502/cs30tbrpg/Character.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/io/github/superjoy0502/cs30tbrpg/Character.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/io/github/superjoy0502/cs30tbrpg/Dice.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/io/github/superjoy0502/cs30tbrpg/Dice.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/io/github/superjoy0502/cs30tbrpg/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/io/github/superjoy0502/cs30tbrpg/Main.java" afterDir="false" />
@@ -63,7 +63,8 @@
       <updated>1677514442361</updated>
       <workItem from="1677514443649" duration="5827000" />
       <workItem from="1677538712073" duration="8379000" />
-      <workItem from="1677577386867" duration="5401000" />
+      <workItem from="1677577386867" duration="7688000" />
+      <workItem from="1677628683811" duration="5372000" />
     </task>
     <servers />
   </component>

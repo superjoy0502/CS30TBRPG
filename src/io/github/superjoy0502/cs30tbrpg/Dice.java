@@ -19,12 +19,12 @@ public class Dice {
 
     public static int roll(String input) {
         String commandWithoutSpaces = input.replaceAll("\\s", "").toLowerCase();
-        final String regex = "^[1-9][0-9]*d[1-9][0-9]*(([+]|-)(([1-9][0-9]*d[1-9][0-9]*)|([0-9]+))+)*$";
+        final String regex = "^[1-9][0-9]*d[1-9][0-9]*([+](([1-9][0-9]*d[1-9][0-9]*)|([0-9]+))+)*$";
         Pattern pattern = Pattern.compile(regex);
         Matcher matcher = pattern.matcher(commandWithoutSpaces);
 
         if (matcher.matches()) {
-            String[] commands = commandWithoutSpaces.split("[+]|-");
+            String[] commands = commandWithoutSpaces.split("[+]");
             int total = 0;
             for (String command : commands) {
                 if (command.contains("d")) {

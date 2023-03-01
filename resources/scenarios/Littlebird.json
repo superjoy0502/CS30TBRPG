@@ -1,0 +1,57 @@
+{
+  "title": "The Burial of Littlebird",
+  "author": "@9bee_16",
+  "translator": "@tonerico_24",
+  "link": "https://tonerico.postype.com/post/8823820",
+  "runtime": 0,
+  "genre": ["Mystery", "Thriller", "Horror"],
+  "characters": [
+    {
+      "name": "Littlebird",
+      "age": 10
+    },
+    {
+      "name": "The 7th woman"
+    },
+    {
+      "name": "Killer",
+      "insane": true,
+      "STR": 65,
+      "CON": 60,
+      "SIZ": 65,
+      "DEX": 60,
+      "APP": 60,
+      "INT": 60,
+      "POW": 45,
+      "EDU": 60,
+      "HP": 12,
+      "MP": 12,
+      "dodge": 24,
+      "damageBonus": "1d4"
+    }
+  ],
+  "episodes": [
+    {
+      "id": 1,
+      "dialogue": [
+        {
+          "speaker": "A Boy",
+          "text": "Please, open your eyes!\nHurry up, or something bad will happen!\nCome on, come on, come on... Help ――!"
+        },
+        {
+          "speaker": "Narrator",
+          "text": "The ringing voice of a boy who knocks you up in a dream.\nYour consciousness springs to mind at the urgent voice."
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "dialogue": [
+        {
+          "speaker": "Narrator",
+          "text": "The place where the you opened your eyes was the entrance of an unfamiliar mansion. You are wearing your clothes, but you have nothing in his possession. And you don't know why you're here. You went into bed last night, and when you opened your eyes, you were here.\n\nYou don't see the boy who talked to you in your dream."
+        }
+      ]
+    }
+  ]
+}

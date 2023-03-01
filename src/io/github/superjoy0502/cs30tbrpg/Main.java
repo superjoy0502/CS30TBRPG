@@ -1,5 +1,9 @@
 package io.github.superjoy0502.cs30tbrpg;
 
+import java.io.*;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 import java.util.Scanner;
 import java.util.regex.Pattern;
 
@@ -277,7 +281,33 @@ public class Main {
                 break;
             case 2:
                 // Load a character
-
+                List<List<String>> characters = new ArrayList<>();
+                try (BufferedReader br = new BufferedReader(new FileReader("resources/characters.csv"))) {
+                    String line;
+                    while ((line = br.readLine()) != null) {
+                        String[] values = line.split(",");
+                        characters.add(Arrays.asList(values));
+                    }
+                } catch (IOException e) {
+                    throw new RuntimeException(e);
+                }
+                for (int i = 0; i < characters.size(); i++) {
+                    System.out.printf("%d. %s%n", i + 1, characters.get(i).get(0));
+                }
+                System.out.print("Please select a character >> ");
+                int characterIndex = -1;
+                while (true) {
+                    try {
+                        characterIndex = Integer.parseInt(scanner.nextLine());
+                        if (characterIndex > 0 && characterIndex <= characters.size()) {
+                            break;
+                        }
+                    } catch (Exception e) {
+                        System.out.println("Invalid input.");
+                    }
+                    System.out.print("Please select a valid character >> ");
+                }
+                character = new Character(characters.get(characterIndex - 1));
                 break;
             case 3:
                 // Exit
