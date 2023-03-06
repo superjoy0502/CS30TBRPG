@@ -1,10 +1,4 @@
 {
-  "title": "The Burial of Littlebird",
-  "author": "@9bee_16",
-  "translator": "@tonerico_24",
-  "link": "https://tonerico.postype.com/post/8823820",
-  "runtime": 0,
-  "genre": ["Mystery", "Thriller", "Horror"],
   "characters": [
     {
       "name": "Littlebird",
@@ -26,13 +20,12 @@
       "EDU": 60,
       "HP": 12,
       "MP": 12,
-      "dodge": 24,
       "damageBonus": "1d4"
     }
   ],
   "episodes": [
     {
-      "id": 1,
+      "id": 0,
       "dialogues": [
         {
           "speaker": "A Boy",
@@ -45,7 +38,7 @@
       ]
     },
     {
-      "id": 2,
+      "id": 1,
       "dialogues": [
         {
           "speaker": "Narrator",
@@ -58,7 +51,7 @@
       ]
     },
     {
-      "id": 3,
+      "id": 2,
       "dialogues": [
         {
           "speaker": "Narrator",
@@ -79,31 +72,31 @@
         {
           "speaker": "The Boy",
           "text": "Quickly, run! Come this way!",
-          "continueTo": "ch1"
+          "continueTo": "ch0"
         }
       ],
       "choices": [
         {
-          "id": 1,
+          "id": 0,
           "prompts": [
             {
-              "id": 1,
+              "id": 0,
               "text": "Run"
             },
             {
-              "id": 2,
+              "id": 1,
               "text": "Stay still"
             }
           ],
           "consequences": [
             {
-              "id": 1,
+              "id": 0,
               "text": "You suddenly find yourself faced with a terrifying scene.\nYou must make a sanity check to see if you can maintain your composure and keep your wits about you.",
               "roll": "SAN/1d2/1d4",
-              "continueTo": "ep4"
+              "continueTo": "ep3"
             },
             {
-              "id": 2,
+              "id": 1,
               "text": "You hear a growling sound from behind you, but you are too scared to even turn around and see what's making the noise. Stuck in place, you suddenly feel an intense pain as if your body is being torn apart, and then everything goes black. You have been lost.",
               "continueTo": "lost"
             }
@@ -112,62 +105,66 @@
       ]
     },
     {
-      "id": 4,
+      "id": 3,
       "dialogues": [
         {
           "name": "Narrator",
           "text": "You have arrived at the living room after escaping from danger. A long-haired rug is spread out on the floor and a long table is placed in the center. A painting hangs on the wall and there seems to be a bookshelf in one corner of the room. A boy is standing in front of the painting, relieved to see that you are unharmed.",
-          "continueTo": "ch1"
+          "continueTo": "ch0"
         }
       ],
       "choices": [
         {
-          "id": 1,
+          "id": 0,
           "prompts": [
             {
-              "id": 1,
+              "id": 0,
               "text": "Explore the living room"
             },
             {
-              "id": 2,
+              "id": 1,
               "text": "Explore the washroom"
             },
             {
-              "id": 3,
+              "id": 2,
               "text": "Explore the bathroom"
             },
             {
-              "id": 4,
+              "id": 3,
               "text": "Explore the kitchen"
             },
             {
-              "id": 5,
+              "id": 4,
               "text": "Explore the passage"
             },
             {
-              "id": 6,
+              "id": 5,
               "text": "Explore the room"
             },
             {
-              "id": 7,
+              "id": 6,
               "text": "Explore the basement"
             },
             {
-              "id": 8,
+              "id": 7,
               "text": "Explore the entrance"
             },
             {
-              "id": 9,
+              "id": 8,
               "text": "Head to the second floor"
             }
+          ],
+          "consequences": [
+            {
+              "id": 0,
+              "text": "You explore the living room.",
+              "continueTo": "ch0"
+            }
           ]
-        }
-      ],
-      "consequences": [
+        },
         {
           "id": 1,
-          "text": "You explore the living room.",
-            "continueTo": "ch1"
+
         }
       ]
     }

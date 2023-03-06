@@ -1,4 +1,4 @@
-package io.github.superjoy0502.cs30tbrpg;
+package io.github.superjoy0502.cs30tbrpg.utilities;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -7,6 +7,9 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class Dice {
+    public static final String regex =
+            "^(([+]?|-)(([1-9][0-9]*d[1-9][0-9]*)|([0-9]+))+)+(([+]|-)(([1-9][0-9]*d[1-9][0-9]*)|([0-9]+))+)*$";
+
     public static int roll(int rolls, int sides, int modifier) {
         int total = 0;
         for (int i = 0; i < rolls; i++) {
@@ -23,8 +26,6 @@ public class Dice {
     public static int roll(String input) {
         String commandWithoutSpaces = input.replaceAll("\\s", "").toLowerCase();
         // Regex for dice command
-        final String regex =
-                "^(([+]?|-)(([1-9][0-9]*d[1-9][0-9]*)|([0-9]+))+)+(([+]|-)(([1-9][0-9]*d[1-9][0-9]*)|([0-9]+))+)*$";
         Pattern pattern = Pattern.compile(regex);
         Matcher matcher = pattern.matcher(commandWithoutSpaces);
 

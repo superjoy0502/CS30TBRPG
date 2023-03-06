@@ -19,8 +19,12 @@
     "EDU": 65,
     "LUK": 55,
     "HP": 11,
+    "maxHP": 11,
     "MP": 10,
+    "maxMP": 10,
     "SAN": 50,
+    "maxSAN": 50,
+    "damageBonus": "+1d4",
     "skills": [
       {
         "name": "Accounting",
@@ -45,10 +49,6 @@
       {
         "name": "Archaeology",
         "value": 1
-      },
-      {
-        "name": "Art/Craft",
-        "value": 5
       },
       {
         "name": "Artillery",
@@ -143,6 +143,10 @@
         "value": 5
       },
       {
+        "name": "Fine Art",
+        "value": 5
+      },
+      {
         "name": "First Aid",
         "value": 30
       },
@@ -196,11 +200,12 @@
       },
       {
         "name": "Language (Other)",
-        "option": "",
+        "option": "English",
         "value": 1
       },
       {
         "name": "Language (Own)",
+        "option": "Japanese",
         "value": 65
       },
       {
@@ -229,7 +234,7 @@
       },
       {
         "name": "Mathematics",
-        "value": 1
+        "value": 10
       },
       {
         "name": "Mechanical Repair",
