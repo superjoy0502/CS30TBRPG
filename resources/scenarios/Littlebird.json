@@ -28,10 +28,12 @@
       "id": 0,
       "dialogues": [
         {
+          "id": 0,
           "speaker": "A Boy",
           "text": "Please, open your eyes!\nHurry up, or something bad will happen!\nCome on, come on, come on... Help ――!"
         },
         {
+          "id": 1,
           "speaker": "Narrator",
           "text": "In your dream, you hear a boy's voice ringing out urgently, as if he is trying to wake you up with his insistent knocking.\nHis voice startles you awake in an instant, pulling you from your slumber and back into consciousness."
         }
@@ -41,10 +43,12 @@
       "id": 1,
       "dialogues": [
         {
+          "id": 0,
           "speaker": "Narrator",
           "text": "As you open your eyes, you find yourself standing in front of a strange western-style mansion. You are dressed in your clothes, but you have no possessions with you, and you have no idea why you are here. The last thing you remember is going to bed last night, and now you find yourself in this unfamiliar place."
         },
         {
+          "id": 1,
           "speaker": "Narrator",
           "text": "Despite your best efforts, you cannot see the boy who spoke to you in your dream. He seems to have disappeared, leaving you alone to explore this mysterious mansion and try to unravel the enigma of your sudden appearance here."
         }
@@ -54,22 +58,27 @@
       "id": 2,
       "dialogues": [
         {
+          "id": 0,
           "speaker": "Narrator",
           "text": "Suddenly, a loud sound echoes through the mansion. You cannot tell if it is a human voice or not.\nThe sound is similar to the desperate cries of an animal trapped in a dead end. The scream is so intense that it seems to have lost all reason and sanity."
         },
         {
+          "id": 1,
           "speaker": "Narrator",
           "text": "The door at the end of the hallway opens wide, revealing a man covered in blood.\nHis body is torn apart, and there is a large hole visible in his eye socket. He takes a few steps forward but then collapses, unable to do anything else. At the same time, you are hit by a powerful stench that feels like it is burning the lining of your nose."
         },
         {
+          "id": 2,
           "speaker": "A Boy",
           "text": "Run! Quickly! That thing is coming! Jabberwock is going to come!"
         },
         {
+          "id": 3,
           "speaker": "Narrator",
           "text": "Suddenly, the living room door bursts open, and the boy's voice rings out once more, trembling with fear. You can see something pouring out from the end of the hallway, slowly taking shape like a black silhouette. It becomes clear that something is emerging from the darkness, something that looks like a long, sharp object."
         },
         {
+          "id": 4,
           "speaker": "The Boy",
           "text": "Quickly, run! Come this way!",
           "continueTo": "ch0"
@@ -108,9 +117,51 @@
       "id": 3,
       "dialogues": [
         {
+          "id": 0,
           "name": "Narrator",
           "text": "You have arrived at the living room after escaping from danger. A long-haired rug is spread out on the floor and a long table is placed in the center. A painting hangs on the wall and there seems to be a bookshelf in one corner of the room. A boy is standing in front of the painting, relieved to see that you are unharmed.",
           "continueTo": "ch0"
+        },
+        {
+          "id": 1,
+          "name": "Narrator",
+          "text": "You smell a sour scent.",
+          "continueTo": "ch1"
+        },
+        {
+          "id": 2,
+          "name": "Narrator",
+          "text": "You can't notice anything else.",
+          "continueTo": "ch1"
+        },
+        {
+          "id": 3,
+          "name": "The Journal",
+          "text": "This is a gruesome and irreparable strange case.\nAs all those involved in the incident have already died, we have no choice but to imagine what happened.\n\nLet's record the certain details.\nThe man kidnapped and murdered women.\nBehind the house, the bodies of six women who were brutally murdered were found.\n\nHowever, when the police arrived at the scene and in the house, the perpetrator himself was found dead in a gruesome manner.\nWho on earth killed the culprit?\nOr rather, what killed him?\n\nIt seems impossible for a human being to kill in such a way.",
+          "roll": "INT/dl4/dl2",
+          "continueTo": "ch1"
+        },
+        {
+          "id": 4,
+          "name": "Narrator",
+          "text": "You notice that this is the news that was made a big fuss a few days ago.",
+          "continueTo": "ch1"
+        },
+        {
+          "id": 5,
+          "name": "Narrator",
+          "text": "You can see letters engraved on the frame.",
+          "continueTo": "dl6"
+        },
+        {
+          "id": 6,
+          "name": "The Painting",
+          "text": "『His body was torn to shreds by the treacherous dagger』",
+          "continueTo": "dl7"
+        },
+        {
+          "id": 7,
+
         }
       ],
       "choices": [
@@ -158,13 +209,61 @@
             {
               "id": 0,
               "text": "You explore the living room.",
-              "continueTo": "ch0"
+              "continueTo": "ch1"
             }
           ]
         },
         {
           "id": 1,
-
+          "prompts": [
+            {
+              "id": 0,
+              "text": "Talk to the boy"
+            },
+            {
+              "id": 1,
+              "text": "Observe the table"
+            },
+            {
+              "id": 2,
+              "text": "Observe the bookshelf"
+            },
+            {
+              "id": 3,
+              "text": "Observe the painting"
+            },
+            {
+              "id": 4,
+              "text": "Observe the entrance"
+            }
+          ],
+          "consequences": [
+            {
+              "id": 0,
+              "text": "Hi.",
+              "continueTo": "ch2"
+            },
+            {
+              "id": 1,
+              "text": "There are two cold meals set out. They seem to be beef stew.",
+              "roll": "Spot Hidden/dl1/dl2"
+            },
+            {
+              "id": 2,
+              "text": "Amidst the books, there is a journal stained with blood.",
+              "continueTo": "dl3"
+            },
+            {
+              "id": 3,
+              "text": "There are beautiful men and women in their 30s drawn. The woman looks has a gorgeous blonde hair.",
+              "roll": "Spot Hidden/dl5/dl7"
+            }
+          ]
+        },
+        {
+          "id": 2,
+          "prompts": [],
+          "consequences": []
         }
       ]
     }

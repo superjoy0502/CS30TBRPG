@@ -1,6 +1,7 @@
 package io.github.superjoy0502.cs30tbrpg;
 
 import io.github.superjoy0502.cs30tbrpg.character.Character;
+import io.github.superjoy0502.cs30tbrpg.character.PlayerCharacter;
 import io.github.superjoy0502.cs30tbrpg.scenario.*;
 import io.github.superjoy0502.cs30tbrpg.utilities.Dice;
 import io.github.superjoy0502.cs30tbrpg.utilities.SuccessLevel;
@@ -16,7 +17,7 @@ public class Game {
     private Scanner scanner;
 
     public Menu menu;
-    public Character playerCharacter = null;
+    public PlayerCharacter playerCharacter = null;
     public Scenario scenario = null;
     private String currentPos = "";
 
@@ -45,6 +46,9 @@ public class Game {
             return;
         }
         // TODO Save current game
+        // Press Enter to continue
+        System.out.println("Press Enter to continue.");
+        scanner.nextLine();
         int episodeId = getEpisodeId(pos);
         String type = getDialogueChoiceType(pos);
         int id = getDialogueChoiceId(pos);
@@ -74,7 +78,7 @@ public class Game {
                     int rollValue = Dice.roll(onSuccess);
                     System.out.println("You rolled " + rollValue + ".");
                 } else {
-                    currentPos = onSuccess;
+                    currentPos = idToPos(onSuccess);
                     display(currentPos);
                     return;
                 }
@@ -84,7 +88,7 @@ public class Game {
                     int rollValue = Dice.roll(onFailure);
                     System.out.println("You rolled " + rollValue + ".");
                 } else {
-                    currentPos = onFailure;
+                    currentPos = idToPos(onFailure);
                     display(currentPos);
                     return;
                 }
@@ -120,6 +124,35 @@ public class Game {
             throw new IndexOutOfBoundsException("Consequence for the choice not found.");
         }
         consequence.print();
+        String roll = consequence.getRoll();
+        if (roll != null) {
+            String[] rollParts = roll.split("/");
+            String rollTarget = rollParts[0];
+            String onSuccess = rollParts[1];
+            String onFailure = rollParts[2];
+            int rollResult = playerCharacter.roll(rollTarget).ordinal();
+            if (rollResult >= SuccessLevel.SUCCESS.ordinal()) {
+                if (onSuccess.matches(Dice.regex)) {
+                    // Roll dice
+                    int rollValue = Dice.roll(onSuccess);
+                    System.out.println("You rolled " + rollValue + ".");
+                } else {
+                    currentPos = idToPos(onSuccess);
+                    display(currentPos);
+                    return;
+                }
+            } else {
+                if (onFailure.matches(Dice.regex)) {
+                    // Roll dice
+                    int rollValue = Dice.roll(onFailure);
+                    System.out.println("You rolled " + rollValue + ".");
+                } else {
+                    currentPos = idToPos(onFailure);
+                    display(currentPos);
+                    return;
+                }
+            }
+        }
         if (consequence.getContinueTo() == null) {
             throw new NullPointerException("Consequence must have a continueTo.");
         } else if (consequence.getContinueTo().equals("lost")) {

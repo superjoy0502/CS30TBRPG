@@ -3,6 +3,7 @@ package io.github.superjoy0502.cs30tbrpg;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import io.github.superjoy0502.cs30tbrpg.character.Character;
+import io.github.superjoy0502.cs30tbrpg.character.PlayerCharacter;
 import io.github.superjoy0502.cs30tbrpg.scenario.Scenario;
 import io.github.superjoy0502.cs30tbrpg.scenario.ScenarioOutline;
 import io.github.superjoy0502.cs30tbrpg.utilities.Dice;
@@ -112,7 +113,7 @@ public class Menu {
                         }
                         if (saveIndex > 0 && saveIndex <= saves.size()) {
                             game.scenario = getScenarioByName(saves.get(saveIndex - 1).getScenario());
-                            game.playerCharacter = getCharacterByName(saves.get(saveIndex - 1).getPlayerCharacter());
+                            game.playerCharacter = (PlayerCharacter) getCharacterByName(saves.get(saveIndex - 1).getPlayerCharacter());
                             break;
                         }
                         System.out.print("Please select a valid save file >> ");
@@ -203,7 +204,7 @@ public class Menu {
                     break;
                 }
                 if (characterIndex > 0 && characterIndex <= characters.size()) {
-                    game.playerCharacter = characters.get(characterIndex - 1);
+                    game.playerCharacter = (PlayerCharacter) characters.get(characterIndex - 1);
                     break;
                 }
                 System.out.print("Please select a valid character >> ");
@@ -215,7 +216,7 @@ public class Menu {
 
     private void createCharacter(Scanner scanner) {
         // Create a character
-        game.playerCharacter = new Character();
+        game.playerCharacter = new PlayerCharacter();
         System.out.print("Please enter your character's name >> ");
         game.playerCharacter.name = scanner.nextLine();
         getHeight(scanner, game.playerCharacter);
@@ -438,10 +439,10 @@ public class Menu {
     }
 
     private String getSpace(int stat) {
-        String spaces = "";
+        StringBuilder spaces = new StringBuilder();
         for (int i = 0; i < 3 - String.valueOf(stat).length(); i++) {
-            spaces += " ";
+            spaces.append(" ");
         }
-        return spaces;
+        return spaces.toString();
     }
 }

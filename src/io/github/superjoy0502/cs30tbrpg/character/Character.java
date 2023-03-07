@@ -167,17 +167,7 @@ public class Character {
         setStats(STR, CON, SIZ, DEX, APP, INT, POW, EDU, LUK, (CON + SIZ) / 10, POW / 5, POW);
     }
 
-    public void save() {
-        Gson gson = new Gson();
-        Type type = new TypeToken<List<Character>>(){}.getType();
-        try {
-            List<Character> characters = gson.fromJson(new FileReader("resources/characters.json"), type);
-            characters.add(this);
-            gson.toJson(characters, new FileWriter("resources/characters.json"));
-        } catch (IOException e) {
-            System.out.println("Error saving character. Please try again.");
-        }
-    }
+    public void save() { }
 
     private Skill getSkill(String skillName) {
         for (Skill skill : skills) {
