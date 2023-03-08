@@ -1,14 +1,10 @@
 package io.github.superjoy0502.cs30tbrpg.character;
 
-import com.google.gson.Gson;
-import com.google.gson.reflect.TypeToken;
 import io.github.superjoy0502.cs30tbrpg.utilities.Dice;
+import io.github.superjoy0502.cs30tbrpg.utilities.SkillType;
 import io.github.superjoy0502.cs30tbrpg.utilities.SuccessLevel;
 
-import java.io.*;
-import java.lang.reflect.Type;
 import java.util.ArrayList;
-import java.util.List;
 
 public class Character {
     public String name;
@@ -37,84 +33,84 @@ public class Character {
     protected int maxSAN;
     protected String damageBonus;
     protected ArrayList<Skill> skills = new ArrayList<Skill>() {{
-        add(new Skill("Accounting", 5));
-        add(new Skill("Acting", 5));
-        add(new Skill("Animal Handling", 5));
-        add(new Skill("Anthropology", 1));
-        add(new Skill("Appraise", 5));
-        add(new Skill("Archaeology", 1));
-        add(new Skill("Artillery", 1));
-        add(new Skill("Astronomy", 1));
-        add(new Skill("Axe", 15));
-        add(new Skill("Biology", 1));
-        add(new Skill("Botany", 1));
-        add(new Skill("Bow", 15));
-        add(new Skill("Brawl", 25));
-        add(new Skill("Chainsaw", 10));
-        add(new Skill("Charm", 15));
-        add(new Skill("Chemistry", 10));
-        add(new Skill("Climb", 20));
-        add(new Skill("Computer Use", 5));
-        add(new Skill("Credit Rating", 0));
-        add(new Skill("Cryptography", 1));
-        add(new Skill("Cthulhu Mythos", 0));
-        add(new Skill("Demolitions", 1));
-        add(new Skill("Disguise", 5));
-        add(new Skill("Diving", 1));
-        add(new Skill("Dodge", 25));
-        add(new Skill("Drive Auto", 20));
-        add(new Skill("Electrical Repair", 10));
-        add(new Skill("Electronics", 1));
-        add(new Skill("Fast Talk", 5));
-        add(new Skill("Fine Art", 5));
-        add(new Skill("First Aid", 30));
-        add(new Skill("Flail", 10));
-        add(new Skill("Flamethrower", 10));
-        add(new Skill("Forensics", 1));
-        add(new Skill("Forgery", 5));
-        add(new Skill("Garrote", 15));
-        add(new Skill("Geology", 1));
-        add(new Skill("Handgun", 20));
-        add(new Skill("Heavy Weapons", 10));
-        add(new Skill("History", 5));
-        add(new Skill("Hypnosis", 1));
-        add(new Skill("Intimidate", 15));
-        add(new Skill("Jump", 20));
-        add(new Skill("Language (Other)", "", 1));
-        add(new Skill("Language (Own)", "", 50));
-        add(new Skill("Law", 5));
-        add(new Skill("Library Use", 20));
-        add(new Skill("Listen", 20));
-        add(new Skill("Locksmith", 1));
-        add(new Skill("Lore", 1));
-        add(new Skill("Machine Gun", 10));
-        add(new Skill("Mathematics", 10));
-        add(new Skill("Mechanical Repair", 10));
-        add(new Skill("Medicine", 1));
-        add(new Skill("Meteorology", 1));
-        add(new Skill("Natural World", 10));
-        add(new Skill("Navigate", 10));
-        add(new Skill("Occult", 5));
-        add(new Skill("Operate Heavy Machinery", 1));
-        add(new Skill("Persuade", 10));
-        add(new Skill("Pilot", "", 1));
-        add(new Skill("Psychoanalysis", 1));
-        add(new Skill("Psychology", 10));
-        add(new Skill("Read Lips", 1));
-        add(new Skill("Ride", 5));
-        add(new Skill("Rifle/Shotgun", 25));
-        add(new Skill("Sleight of Hand", 10));
-        add(new Skill("Spear", 20));
-        add(new Skill("Spot Hidden", 25));
-        add(new Skill("Stealth", 20));
-        add(new Skill("Submachine Gun", 15));
-        add(new Skill("Survival", "", 10));
-        add(new Skill("Sword", 20));
-        add(new Skill("Swim", 20));
-        add(new Skill("Throw", 20));
-        add(new Skill("Track", 10));
-        add(new Skill("Whip", 5));
-        add(new Skill("Zoology", 1));
+        add(new Skill(SkillType.ACCOUNTING, 5));
+        add(new Skill(SkillType.ACTING, 5));
+        add(new Skill(SkillType.ANIMAL_HANDLING, 5));
+        add(new Skill(SkillType.ANTRHROPOLOGY, 1));
+        add(new Skill(SkillType.APPRAISE, 5));
+        add(new Skill(SkillType.ARCHAEOLOGY, 1));
+        add(new Skill(SkillType.ARTILLERY, 1));
+        add(new Skill(SkillType.ASTRONOMY, 1));
+        add(new Skill(SkillType.AXE, 15));
+        add(new Skill(SkillType.BIOLOGY, 1));
+        add(new Skill(SkillType.BOTANY, 1));
+        add(new Skill(SkillType.BOW, 15));
+        add(new Skill(SkillType.BRAWL, 25));
+        add(new Skill(SkillType.CHAINSAW, 10));
+        add(new Skill(SkillType.CHARM, 15));
+        add(new Skill(SkillType.CHEMISTRY, 10));
+        add(new Skill(SkillType.CLIMB, 20));
+        add(new Skill(SkillType.COMPUTER_USE, 5));
+        add(new Skill(SkillType.CREDIT_RATING, 0));
+        add(new Skill(SkillType.CRYPTOGRAPHY, 1));
+        add(new Skill(SkillType.CTHULHU_MYTHOS, 0));
+        add(new Skill(SkillType.DEMOLITIONS, 1));
+        add(new Skill(SkillType.DISGUISE, 5));
+        add(new Skill(SkillType.DIVING, 1));
+        add(new Skill(SkillType.DODGE, 25));
+        add(new Skill(SkillType.DRIVE_AUTO, 20));
+        add(new Skill(SkillType.ELECTRICAL_REPAIR, 10));
+        add(new Skill(SkillType.ELECTRONICS, 1));
+        add(new Skill(SkillType.FAST_TALK, 5));
+        add(new Skill(SkillType.FINE_ART, 5));
+        add(new Skill(SkillType.FIRST_AID, 30));
+        add(new Skill(SkillType.FLAIL, 10));
+        add(new Skill(SkillType.FLAME_THROWER, 10));
+        add(new Skill(SkillType.FORENSICS, 1));
+        add(new Skill(SkillType.FORGERY, 5));
+        add(new Skill(SkillType.GARROTTE, 15));
+        add(new Skill(SkillType.GEOLOGY, 1));
+        add(new Skill(SkillType.HANDGUN, 20));
+        add(new Skill(SkillType.HEAVY_WEAPONS, 10));
+        add(new Skill(SkillType.HISTORY, 5));
+        add(new Skill(SkillType.HYPNOSIS, 1));
+        add(new Skill(SkillType.INTIMIDATE, 15));
+        add(new Skill(SkillType.JUMP, 20));
+        add(new Skill(SkillType.LANGUAGE_OTHER, "", 1));
+        add(new Skill(SkillType.LANGUAGE_OWN, "", 50));
+        add(new Skill(SkillType.LAW, 5));
+        add(new Skill(SkillType.LIBRARY_USE, 20));
+        add(new Skill(SkillType.LISTEN, 20));
+        add(new Skill(SkillType.LOCKSMITH, 1));
+        add(new Skill(SkillType.LORE, 1));
+        add(new Skill(SkillType.MACHINE_GUN, 10));
+        add(new Skill(SkillType.MATHEMATICS, 10));
+        add(new Skill(SkillType.MECHANICAL_REPAIR, 10));
+        add(new Skill(SkillType.MEDICINE, 1));
+        add(new Skill(SkillType.METEOROLOGY, 1));
+        add(new Skill(SkillType.NATURAL_WORLD, 10));
+        add(new Skill(SkillType.NAVIGATE, 10));
+        add(new Skill(SkillType.OCCULT, 5));
+        add(new Skill(SkillType.OPERATE_HEAVY_MACHINERY, 1));
+        add(new Skill(SkillType.PERSUADE, 10));
+        add(new Skill(SkillType.PILOT, "", 1));
+        add(new Skill(SkillType.PSYCHOANALYSIS, 1));
+        add(new Skill(SkillType.PSYCHOLOGY, 10));
+        add(new Skill(SkillType.READ_LIPS, 1));
+        add(new Skill(SkillType.RIDE, 5));
+        add(new Skill(SkillType.RIFLE_SHOTGUN, 25));
+        add(new Skill(SkillType.SLEIGHT_OF_HAND, 10));
+        add(new Skill(SkillType.SPEAR, 20));
+        add(new Skill(SkillType.SPOT_HIDDEN, 25));
+        add(new Skill(SkillType.STEALTH, 20));
+        add(new Skill(SkillType.SUBMACHINE_GUN, 15));
+        add(new Skill(SkillType.SURVIVAL, "", 10));
+        add(new Skill(SkillType.SWORD, 20));
+        add(new Skill(SkillType.SWIM, 20));
+        add(new Skill(SkillType.THROW, 20));
+        add(new Skill(SkillType.TRACK, 10));
+        add(new Skill(SkillType.WHIP, 5));
+        add(new Skill(SkillType.ZOOLOGY, 1));
     }};
 
     public Character() { }
@@ -155,9 +151,9 @@ public class Character {
         this.HP = HP;
         maxMP = this.POW / 5;
         this.MP = MP;
-        maxSAN = this.POW;
+        maxSAN = 99 - getSkill(SkillType.CTHULHU_MYTHOS).getValue();
         this.SAN = SAN;
-        Skill ownLang = getSkill("Language (Own)");
+        Skill ownLang = getSkill(SkillType.LANGUAGE_OWN);
         if (ownLang != null) {
             ownLang.setValue(EDU);
         }
@@ -169,13 +165,33 @@ public class Character {
 
     public void save() { }
 
-    private Skill getSkill(String skillName) {
+    private Skill getSkill(SkillType skillType) {
+        /*// Linear search
         for (Skill skill : skills) {
-            if (skill.getName().equals(skillName)) {
+            if (skill.getType().equals(skillType)) {
                 return skill;
+            }
+        }*/
+
+        // Binary search
+        int low = 0;
+        int high = skills.size() - 1;
+        while (low <= high) {
+            int mid = (low + high) / 2;
+            Skill skill = skills.get(mid);
+            if (skill.getType().equals(skillType)) {
+                return skill;
+            } else if (skill.getType().compareTo(skillType) < 0) {
+                low = mid + 1;
+            } else {
+                high = mid - 1;
             }
         }
         return null;
+    }
+
+    public SuccessLevel roll(SkillType skillType) {
+        return roll(skillType.toString());
     }
 
     public SuccessLevel roll(String target) {
@@ -210,7 +226,7 @@ public class Character {
                 value = LUK;
                 break;
             default:
-                Skill skill = getSkill(target);
+                Skill skill = getSkill(SkillType.fromString(target));
                 if (skill == null) {
                     throw new NullPointerException("Skill not found");
                 }

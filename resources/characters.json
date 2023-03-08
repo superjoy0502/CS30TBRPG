@@ -23,7 +23,7 @@
     "MP": 10,
     "maxMP": 10,
     "SAN": 50,
-    "maxSAN": 50,
+    "maxSAN": 99,
     "damageBonus": "+1d4",
     "skills": [
       {
@@ -76,7 +76,7 @@
       },
       {
         "name": "Brawl",
-        "value": 25
+        "value": 70
       },
       {
         "name": "Chainsaw",
@@ -124,7 +124,7 @@
       },
       {
         "name": "Dodge",
-        "value": 25
+        "value": 45
       },
       {
         "name": "Drive Auto",
@@ -140,7 +140,7 @@
       },
       {
         "name": "Fast Talk",
-        "value": 5
+        "value": 60
       },
       {
         "name": "Fine Art",
@@ -214,11 +214,11 @@
       },
       {
         "name": "Library Use",
-        "value": 20
+        "value": 70
       },
       {
         "name": "Listen",
-        "value": 20
+        "value": 65
       },
       {
         "name": "Locksmith",
@@ -238,7 +238,7 @@
       },
       {
         "name": "Mechanical Repair",
-        "value": 10
+        "value": 40
       },
       {
         "name": "Medicine",
@@ -303,7 +303,7 @@
       },
       {
         "name": "Spot Hidden",
-        "value": 25
+        "value": 65
       },
       {
         "name": "Stealth",
@@ -311,7 +311,7 @@
       },
       {
         "name": "Submachine Gun",
-        "value": 15
+        "value": 70
       },
       {
         "name": "Survival",

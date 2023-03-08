@@ -5,6 +5,8 @@ import com.google.gson.reflect.TypeToken;
 
 import java.io.FileNotFoundException;
 import java.io.FileReader;
+import java.io.IOException;
+import java.io.Reader;
 import java.lang.reflect.Type;
 import java.util.List;
 
@@ -53,9 +55,9 @@ public class ScenarioOutline {
     public Scenario getScenario() {
         Gson gson = new Gson();
         Type type = new TypeToken<Scenario>(){}.getType();
-        try {
-            return gson.fromJson(new FileReader("resources/scenarios/" + filename + ".json"), type);
-        } catch (FileNotFoundException e) {
+        try (Reader reader = new FileReader("resources/scenarios/" + filename + ".json")) {
+            return gson.fromJson(reader, type);
+        } catch (IOException e) {
             return null;
         }
     }

@@ -1,24 +1,26 @@
 package io.github.superjoy0502.cs30tbrpg.character;
 
+import io.github.superjoy0502.cs30tbrpg.utilities.SkillType;
+
 public class Skill {
-    private String name;
+    private SkillType type;
     private String option;
     private int value;
 
-    public Skill(String name, String option, int value) {
-        this.name = name;
+    public Skill(SkillType type, String option, int value) {
+        this.type = type;
         this.option = option;
         this.value = value;
     }
 
-    public Skill(String name, int value) {
-        this.name = name;
+    public Skill(SkillType type, int value) {
+        this.type = type;
         this.option = null;
         this.value = value;
     }
 
-    public String getName() {
-        return name;
+    public SkillType getType() {
+        return type;
     }
 
     public String getOption() {

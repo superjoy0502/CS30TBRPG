@@ -11,6 +11,8 @@ import io.github.superjoy0502.cs30tbrpg.utilities.Save;
 
 import java.io.FileNotFoundException;
 import java.io.FileReader;
+import java.io.IOException;
+import java.io.Reader;
 import java.lang.reflect.Type;
 import java.util.List;
 import java.util.Scanner;
@@ -61,8 +63,8 @@ public class Menu {
                 // Get scenarios
                 Gson gson = new Gson();
                 Type type = new TypeToken<List<ScenarioOutline>>(){}.getType();
-                try {
-                    List<ScenarioOutline> scenarioOutlines = gson.fromJson(new FileReader("resources/scenarios.json"), type);
+                try (FileReader reader = new FileReader("resources/scenarios.json")) {
+                    List<ScenarioOutline> scenarioOutlines = gson.fromJson(reader, type);
                     for (int i = 0; i < scenarioOutlines.size(); i++) {
                         System.out.printf("%d. %s%n", i + 1, scenarioOutlines.get(i).getTitle());
                     }
@@ -80,7 +82,7 @@ public class Menu {
                         }
                         System.out.print("Please select a valid scenario >> ");
                     }
-                } catch (FileNotFoundException e) {
+                } catch (IOException e) {
                     throw new RuntimeException(e);
                 }
                 game.start();
@@ -97,8 +99,8 @@ public class Menu {
                 // Then load the selected save file
                 Gson g = new Gson();
                 Type t = new TypeToken<List<Save>>(){}.getType();
-                try {
-                    List<Save> saves = g.fromJson(new FileReader("resources/saves.json"), t);
+                try (Reader reader = new FileReader("resources/saves.json")){
+                    List<Save> saves = g.fromJson(reader, t);
                     for (int i = 0; i < saves.size(); i++) {
                         Save save = saves.get(i);
                         System.out.println((i + 1) + ". " + save.getScenario() + " - " + save.getPlayerCharacter() + " [" + save.getTime() + "]");
@@ -119,7 +121,7 @@ public class Menu {
                         System.out.print("Please select a valid save file >> ");
                     }
                     System.out.println("Loading save file...");
-                } catch (FileNotFoundException e) {
+                } catch (IOException e) {
                     throw new RuntimeException(e);
                 }
                 // TODO Load save file
@@ -156,14 +158,14 @@ public class Menu {
     private Scenario getScenarioByName(String name) {
         Gson gson = new Gson();
         Type type = new TypeToken<List<ScenarioOutline>>(){}.getType();
-        try {
-            List<ScenarioOutline> scenarioOutlines = gson.fromJson(new FileReader("resources/scenarios.json"), type);
+        try (Reader reader = new FileReader("resources/scenarios.json")) {
+            List<ScenarioOutline> scenarioOutlines = gson.fromJson(reader, type);
             for (ScenarioOutline scenarioOutline : scenarioOutlines) {
                 if (scenarioOutline.getTitle().equals(name)) {
                     return scenarioOutline.getScenario();
                 }
             }
-        } catch (FileNotFoundException e) {
+        } catch (IOException e) {
             throw new RuntimeException(e);
         }
         return null;
@@ -173,14 +175,14 @@ public class Menu {
     private Character getCharacterByName(String name) {
         Gson gson = new Gson();
         Type type = new TypeToken<List<Character>>(){}.getType();
-        try {
-            List<Character> characters = gson.fromJson(new FileReader("resources/characters.json"), type);
+        try (Reader reader = new FileReader("resources/characters.json")) {
+            List<Character> characters = gson.fromJson(reader, type);
             for (Character character : characters) {
                 if (character.name.equals(name)) {
                     return character;
                 }
             }
-        } catch (FileNotFoundException e) {
+        } catch (IOException e) {
             throw new RuntimeException(e);
         }
         return null;
@@ -190,8 +192,8 @@ public class Menu {
         // Load a character
         Gson gson = new Gson();
         Type type = new TypeToken<List<Character>>(){}.getType();
-        try {
-            List<Character> characters = gson.fromJson(new FileReader("resources/characters.json"), type);
+        try (Reader reader = new FileReader("resources/characters.json")) {
+            List<Character> characters = gson.fromJson(reader, type);
             for (int i = 0; i < characters.size(); i++) {
                 System.out.printf("%d. %s%n", i + 1, characters.get(i).name);
             }
@@ -209,7 +211,7 @@ public class Menu {
                 }
                 System.out.print("Please select a valid character >> ");
             }
-        } catch (FileNotFoundException e) {
+        } catch (IOException e) {
             throw new RuntimeException(e);
         }
     }
