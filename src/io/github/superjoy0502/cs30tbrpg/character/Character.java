@@ -25,11 +25,11 @@ public class Character {
     protected int POW;
     protected int EDU;
     protected int LUK;
-    protected int HP;
+    public int HP;
     protected int maxHP;
-    protected int MP;
+    public int MP;
     protected int maxMP;
-    protected int SAN;
+    public int SAN;
     protected int maxSAN;
     protected String damageBonus;
     protected ArrayList<Skill> skills = new ArrayList<Skill>() {{
