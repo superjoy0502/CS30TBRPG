@@ -1,4 +1,5 @@
 {
+  "title": "The Burial of Littlebird",
   "characters": [
     {
       "name": "Littlebird",
@@ -158,10 +159,6 @@
           "name": "The Painting",
           "text": "『His body was torn to shreds by the treacherous dagger』",
           "continueTo": "dl7"
-        },
-        {
-          "id": 7,
-
         }
       ],
       "choices": [

@@ -113,8 +113,6 @@ public class Character {
         add(new Skill(SkillType.ZOOLOGY, 1));
     }};
 
-    public Character() { }
-
     public void setStats(int STR, int CON, int SIZ, int DEX, int APP, int INT, int POW, int EDU, int LUK, int HP, int MP, int SAN) {
         this.STR = STR;
         this.CON = CON;
