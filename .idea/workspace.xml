@@ -5,15 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="657cecd3-3d59-4cf6-982e-e90e549b4383" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/io/github/superjoy0502/cs30tbrpg/utilities/SkillType.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/characters.json" beforeDir="false" afterPath="$PROJECT_DIR$/resources/characters.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/saves.json" beforeDir="false" afterPath="$PROJECT_DIR$/resources/saves.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/scenarios/Littlebird.json" beforeDir="false" afterPath="$PROJECT_DIR$/resources/scenarios/Littlebird.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/io/github/superjoy0502/cs30tbrpg/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/io/github/superjoy0502/cs30tbrpg/Game.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/io/github/superjoy0502/cs30tbrpg/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/io/github/superjoy0502/cs30tbrpg/Menu.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/io/github/superjoy0502/cs30tbrpg/character/Character.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/io/github/superjoy0502/cs30tbrpg/character/Character.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/io/github/superjoy0502/cs30tbrpg/character/NPC.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/io/github/superjoy0502/cs30tbrpg/character/NPC.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/io/github/superjoy0502/cs30tbrpg/character/PlayerCharacter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/io/github/superjoy0502/cs30tbrpg/character/PlayerCharacter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/io/github/superjoy0502/cs30tbrpg/character/Skill.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/io/github/superjoy0502/cs30tbrpg/character/Skill.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/io/github/superjoy0502/cs30tbrpg/scenario/Consequence.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/io/github/superjoy0502/cs30tbrpg/scenario/Consequence.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/io/github/superjoy0502/cs30tbrpg/scenario/ScenarioOutline.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/io/github/superjoy0502/cs30tbrpg/scenario/ScenarioOutline.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/io/github/superjoy0502/cs30tbrpg/scenario/Scenario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/io/github/superjoy0502/cs30tbrpg/scenario/Scenario.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/io/github/superjoy0502/cs30tbrpg/utilities/Save.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/io/github/superjoy0502/cs30tbrpg/utilities/Save.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -109,7 +110,14 @@
       <workItem from="1678248819293" duration="1568000" />
       <workItem from="1678250846228" duration="1561000" />
       <workItem from="1678259462551" duration="3366000" />
-      <workItem from="1678292537165" duration="2868000" />
+      <workItem from="1678292537165" duration="3457000" />
+      <workItem from="1678391327534" duration="733000" />
+      <workItem from="1678465864249" duration="2792000" />
+      <workItem from="1678582355271" duration="8333000" />
+      <workItem from="1678670195761" duration="10582000" />
+      <workItem from="1678749012818" duration="8114000" />
+      <workItem from="1678765992519" duration="2473000" />
+      <workItem from="1678806197634" duration="569000" />
     </task>
     <servers />
   </component>

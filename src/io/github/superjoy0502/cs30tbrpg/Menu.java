@@ -14,8 +14,10 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.io.Reader;
 import java.lang.reflect.Type;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
+import java.util.UUID;
 import java.util.regex.Pattern;
 
 public class Menu {
@@ -85,28 +87,22 @@ public class Menu {
                 } catch (IOException e) {
                     throw new RuntimeException(e);
                 }
+                game.setUuid(UUID.randomUUID());
                 game.start();
                 return;
             case 2:
                 // Load a game
-                if (!checkCharacter()) {
-                    open();
-                    return;
-                }
-                // Get json save files located in resources/saves and convert them to Save objects then add them to a list
-                // Then print the list
-                // Then ask the user to select a save file
-                // Then load the selected save file
-                Gson g = new Gson();
-                Type t = new TypeToken<List<Save>>(){}.getType();
-                try (Reader reader = new FileReader("resources/saves.json")){
-                    List<Save> saves = g.fromJson(reader, t);
+                List<Save> saves = getSaves();
+                if (saves.size() == 0) {
+                    System.out.println("No saves found.");
+                } else {
+                    System.out.println("Select a save:");
                     for (int i = 0; i < saves.size(); i++) {
                         Save save = saves.get(i);
-                        System.out.println((i + 1) + ". " + save.getScenario() + " - " + save.getPlayerCharacter() + " [" + save.getTime() + "]");
+                        System.out.printf("%d. %s - %s - %s%n", i + 1, save.getScenario(), save.getPlayerCharacter(), save.getTime());
                     }
                     System.out.println("0. Cancel");
-                    System.out.print("Please select a save file >> ");
+                    System.out.print("Please select a save >> ");
                     int saveIndex = -1;
                     while (true) {
                         saveIndex = Integer.parseInt(scanner.nextLine());
@@ -114,17 +110,13 @@ public class Menu {
                             break;
                         }
                         if (saveIndex > 0 && saveIndex <= saves.size()) {
-                            game.scenario = getScenarioByName(saves.get(saveIndex - 1).getScenario());
-                            game.playerCharacter = (PlayerCharacter) getCharacterByName(saves.get(saveIndex - 1).getPlayerCharacter());
+                            Save save = saves.get(saveIndex - 1);
+                            game.load(UUID.fromString(save.getUuid()), getScenarioByName(save.getScenario()), getPlayerCharacterByName(save.getPlayerCharacter()), save.getPosition());
                             break;
                         }
-                        System.out.print("Please select a valid save file >> ");
+                        System.out.print("Please select a valid save >> ");
                     }
-                    System.out.println("Loading save file...");
-                } catch (IOException e) {
-                    throw new RuntimeException(e);
                 }
-                // TODO Load save file
                 break;
             case 3:
                 createCharacter(scanner);
@@ -135,15 +127,28 @@ public class Menu {
             case 5:
                 // Exit
                 System.exit(0);
-            case 1002:
-                // Test
-                break;
             default:
                 // Invalid input
                 System.out.println("Invalid input.");
                 break;
         }
         open();
+    }
+
+    public ArrayList<Save> getSaves() {
+        Gson g = new Gson();
+        Type t = new TypeToken<List<Save>>(){}.getType();
+        try (Reader reader = new FileReader("resources/saves.json")){
+            List<Save> saves = g.fromJson(reader, t);
+            if (saves == null) {
+                return new ArrayList<>();
+            }
+            else {
+                return new ArrayList<>(saves);
+            }
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     private boolean checkCharacter() {
@@ -188,6 +193,22 @@ public class Menu {
         return null;
     }
 
+    private PlayerCharacter getPlayerCharacterByName(String name) {
+        Gson gson = new Gson();
+        Type type = new TypeToken<List<PlayerCharacter>>(){}.getType();
+        try (Reader reader = new FileReader("resources/characters.json")) {
+            List<PlayerCharacter> characters = gson.fromJson(reader, type);
+            for (PlayerCharacter character : characters) {
+                if (character.name.equals(name)) {
+                    return character;
+                }
+            }
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+        return null;
+    }
+
     private void loadCharacter(Scanner scanner) {
         // Load a character
         Gson gson = new Gson();
@@ -206,7 +227,7 @@ public class Menu {
                     break;
                 }
                 if (characterIndex > 0 && characterIndex <= characters.size()) {
-                    game.playerCharacter = (PlayerCharacter) characters.get(characterIndex - 1);
+                    game.playerCharacter = PlayerCharacter.fromCharacter(characters.get(characterIndex - 1));
                     break;
                 }
                 System.out.print("Please select a valid character >> ");

@@ -1,20 +1,26 @@
 package io.github.superjoy0502.cs30tbrpg;
 
+import com.google.gson.Gson;
 import io.github.superjoy0502.cs30tbrpg.character.Character;
 import io.github.superjoy0502.cs30tbrpg.character.PlayerCharacter;
 import io.github.superjoy0502.cs30tbrpg.scenario.*;
 import io.github.superjoy0502.cs30tbrpg.utilities.Dice;
+import io.github.superjoy0502.cs30tbrpg.utilities.Save;
 import io.github.superjoy0502.cs30tbrpg.utilities.SuccessLevel;
 
-import java.io.Console;
+import java.io.FileWriter;
 import java.io.IOException;
-import java.util.Arrays;
+import java.io.Writer;
+import java.util.ArrayList;
+import java.util.Date;
 import java.util.Scanner;
+import java.util.UUID;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class Game {
     private Scanner scanner;
+    private UUID uuid;
 
     public Menu menu;
     public PlayerCharacter playerCharacter = null;
@@ -40,12 +46,36 @@ public class Game {
         display(currentPos);
     }
 
+    public void load(UUID uuid, Scenario scenario, PlayerCharacter character, String pos) {
+        this.uuid = uuid;
+        this.scenario = scenario;
+        this.playerCharacter = character;
+        currentPos = pos;
+        System.out.println();
+        display(currentPos);
+    }
+
     public void display(String pos) {
         if (scenario == null) {
             System.out.println("No scenario loaded.");
             return;
         }
         // TODO Save current game
+        ArrayList<Save> saves = menu.getSaves();
+        for (int i = 0; i < saves.size(); i++) {
+            Save save = saves.get(i);
+            if (save.getUuid().equals(uuid.toString())) {
+                saves.remove(i);
+            }
+        }
+        saves.add(new Save(uuid.toString(), new Date().toString(), scenario.getTitle(), playerCharacter.name, pos));
+        Gson gson = new Gson();
+        String json = gson.toJson(saves);
+        try (Writer writer = new FileWriter("resources/saves.json")) {
+            writer.write(json);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
         // Press Enter to continue
         System.out.println("Press Enter to continue.");
         scanner.nextLine();
@@ -246,5 +276,13 @@ public class Game {
         } else {
             throw new IllegalArgumentException("Invalid position.");
         }
+    }
+
+    public UUID getUuid() {
+        return uuid;
+    }
+
+    public void setUuid(UUID uuid) {
+        this.uuid = uuid;
     }
 }
