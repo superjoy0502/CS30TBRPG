@@ -61,11 +61,11 @@ public class Dice {
     }
 
     private static List<String> splitDiceCommand(String input) {
-        List<String> commands = Arrays.asList(input.split("([+]|-)"));
+    	ArrayList<String> commands = new ArrayList<String>(Arrays.asList(input.split("([+]|-)")));
         ArrayList<String> result = new ArrayList<>();
         for (int i = 0; i < commands.size(); i++) {
             result.add(commands.get(0));
-            result.add(String.valueOf(input.charAt(commands.get(0).length())));
+            result.add(String.valueOf(input.charAt(commands.get(0).length() - 1)));
             commands.remove(0);
         }
         return result;
