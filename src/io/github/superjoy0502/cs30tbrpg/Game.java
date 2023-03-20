@@ -1,6 +1,7 @@
 package io.github.superjoy0502.cs30tbrpg;
 
 import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 import io.github.superjoy0502.cs30tbrpg.character.Character;
 import io.github.superjoy0502.cs30tbrpg.character.PlayerCharacter;
 import io.github.superjoy0502.cs30tbrpg.scenario.*;
@@ -60,7 +61,7 @@ public class Game {
             System.out.println("No scenario loaded.");
             return;
         }
-        // TODO Save current game
+        // Save current game
         ArrayList<Save> saves = menu.getSaves();
         for (int i = 0; i < saves.size(); i++) {
             Save save = saves.get(i);
@@ -69,7 +70,7 @@ public class Game {
             }
         }
         saves.add(new Save(uuid.toString(), new Date().toString(), scenario.getTitle(), playerCharacter.name, pos));
-        Gson gson = new Gson();
+        Gson gson = new GsonBuilder().setPrettyPrinting().create();
         String json = gson.toJson(saves);
         try (Writer writer = new FileWriter("resources/saves.json")) {
             writer.write(json);
@@ -106,7 +107,8 @@ public class Game {
                 if (onSuccess.matches(Dice.regex)) {
                     // Roll dice
                     int rollValue = Dice.roll(onSuccess);
-                    System.out.println("You rolled " + rollValue + ".");
+                    playerCharacter.SAN -= rollValue;
+                    System.out.println("SAN - " + rollValue + "(" + onSuccess + ")" + " > " + playerCharacter.SAN);
                 } else {
                     currentPos = idToPos(onSuccess);
                     display(currentPos);
@@ -116,7 +118,8 @@ public class Game {
                 if (onFailure.matches(Dice.regex)) {
                     // Roll dice
                     int rollValue = Dice.roll(onFailure);
-                    System.out.println("You rolled " + rollValue + ".");
+                    playerCharacter.SAN -= rollValue;
+                    System.out.println("SAN - " + rollValue + "(" + onFailure + ")" + " > " + playerCharacter.SAN);
                 } else {
                     currentPos = idToPos(onFailure);
                     display(currentPos);

@@ -10,25 +10,17 @@ public class Battle {
     private int id;
     private List<Character> enemies;
     private List<Character> allies; // The 0th element of this list is always the player character
+    private String continueTo;
     
     private int getTotalDamage(int damage, String damageBonus) {
     	return damage + Dice.roll(damageBonus);
     }
     
     private boolean dodgeSuccess(SuccessLevel attackLevel, SuccessLevel dodgeLevel) {
-    	if (attackLevel.ordinal() > dodgeLevel.ordinal()) {
-    		return false;
-    	}
-    	else {
-    		return true;
-    	}
+        return attackLevel.ordinal() <= dodgeLevel.ordinal();
     }
     
     private void decreaseHP(Character character, int value){
     	character.HP -= value;
-    }
-    
-    public static void main(String[] args) {
-    	System.out.println(new Battle().getTotalDamage(0, "1d4"));
     }
 }

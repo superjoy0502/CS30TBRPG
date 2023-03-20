@@ -56,67 +56,10 @@ public class Menu {
         }
         switch (choice) {
             case 1:
-                // Start a new game
-                if (!checkCharacter()) {
-                    open();
-                    return;
-                }
-                System.out.println("Select a scenario:");
-                // Get scenarios
-                Gson gson = new Gson();
-                Type type = new TypeToken<List<ScenarioOutline>>(){}.getType();
-                try (FileReader reader = new FileReader("resources/scenarios.json")) {
-                    List<ScenarioOutline> scenarioOutlines = gson.fromJson(reader, type);
-                    for (int i = 0; i < scenarioOutlines.size(); i++) {
-                        System.out.printf("%d. %s%n", i + 1, scenarioOutlines.get(i).getTitle());
-                    }
-                    System.out.println("0. Cancel");
-                    System.out.print("Please select a scenario >> ");
-                    int scenarioIndex = -1;
-                    while (true) {
-                        scenarioIndex = Integer.parseInt(scanner.nextLine());
-                        if (scenarioIndex == 0) {
-                            break;
-                        }
-                        if (scenarioIndex > 0 && scenarioIndex <= scenarioOutlines.size()) {
-                            game.scenario = scenarioOutlines.get(scenarioIndex - 1).getScenario();
-                            break;
-                        }
-                        System.out.print("Please select a valid scenario >> ");
-                    }
-                } catch (IOException e) {
-                    throw new RuntimeException(e);
-                }
-                game.setUuid(UUID.randomUUID());
-                game.start();
+                startGame();
                 return;
             case 2:
-                // Load a game
-                List<Save> saves = getSaves();
-                if (saves.size() == 0) {
-                    System.out.println("No saves found.");
-                } else {
-                    System.out.println("Select a save:");
-                    for (int i = 0; i < saves.size(); i++) {
-                        Save save = saves.get(i);
-                        System.out.printf("%d. %s - %s - %s%n", i + 1, save.getScenario(), save.getPlayerCharacter(), save.getTime());
-                    }
-                    System.out.println("0. Cancel");
-                    System.out.print("Please select a save >> ");
-                    int saveIndex = -1;
-                    while (true) {
-                        saveIndex = Integer.parseInt(scanner.nextLine());
-                        if (saveIndex == 0) {
-                            break;
-                        }
-                        if (saveIndex > 0 && saveIndex <= saves.size()) {
-                            Save save = saves.get(saveIndex - 1);
-                            game.load(UUID.fromString(save.getUuid()), getScenarioByName(save.getScenario()), getPlayerCharacterByName(save.getPlayerCharacter()), save.getPosition());
-                            break;
-                        }
-                        System.out.print("Please select a valid save >> ");
-                    }
-                }
+                loadGame();
                 break;
             case 3:
                 createCharacter(scanner);
@@ -133,6 +76,71 @@ public class Menu {
                 break;
         }
         open();
+    }
+
+    private void startGame() {
+        // Start a new game
+        if (!checkCharacter()) {
+            open();
+            return;
+        }
+        System.out.println("Select a scenario:");
+        // Get scenarios
+        Gson gson = new Gson();
+        Type type = new TypeToken<List<ScenarioOutline>>(){}.getType();
+        try (FileReader reader = new FileReader("resources/scenarios.json")) {
+            List<ScenarioOutline> scenarioOutlines = gson.fromJson(reader, type);
+            for (int i = 0; i < scenarioOutlines.size(); i++) {
+                System.out.printf("%d. %s%n", i + 1, scenarioOutlines.get(i).getTitle());
+            }
+            System.out.println("0. Cancel");
+            System.out.print("Please select a scenario >> ");
+            int scenarioIndex = -1;
+            while (true) {
+                scenarioIndex = Integer.parseInt(scanner.nextLine());
+                if (scenarioIndex == 0) {
+                    break;
+                }
+                if (scenarioIndex > 0 && scenarioIndex <= scenarioOutlines.size()) {
+                    game.scenario = scenarioOutlines.get(scenarioIndex - 1).getScenario();
+                    break;
+                }
+                System.out.print("Please select a valid scenario >> ");
+            }
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+        game.setUuid(UUID.randomUUID());
+        game.start();
+    }
+
+    private void loadGame() {
+        // Load a game
+        List<Save> saves = getSaves();
+        if (saves.size() == 0) {
+            System.out.println("No saves found.");
+        } else {
+            System.out.println("Select a save:");
+            for (int i = 0; i < saves.size(); i++) {
+                Save save = saves.get(i);
+                System.out.printf("%d. %s - %s - %s%n", i + 1, save.getScenario(), save.getPlayerCharacter(), save.getTime());
+            }
+            System.out.println("0. Cancel");
+            System.out.print("Please select a save >> ");
+            int saveIndex = -1;
+            while (true) {
+                saveIndex = Integer.parseInt(scanner.nextLine());
+                if (saveIndex == 0) {
+                    break;
+                }
+                if (saveIndex > 0 && saveIndex <= saves.size()) {
+                    Save save = saves.get(saveIndex - 1);
+                    game.load(UUID.fromString(save.getUuid()), getScenarioByName(save.getScenario()), getPlayerCharacterByName(save.getPlayerCharacter()), save.getPosition());
+                    break;
+                }
+                System.out.print("Please select a valid save >> ");
+            }
+        }
     }
 
     public ArrayList<Save> getSaves() {

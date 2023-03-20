@@ -1,0 +1,390 @@
+{
+  "title": "Atopos",
+  "characters": [
+    {
+      "name": "Lily"
+    }
+  ],
+  "episodes": [
+    {
+      "id": 1,
+      "dialogues": [
+        {
+          "id": 0,
+          "speaker": "Narrator",
+          "text": "The snow falls softly, accumulating in small mounds. It's snowing in the desert."
+        },
+        {
+          "id": 1,
+          "speaker": "Narrator",
+          "text": "White ash pours down like a disaster, calling forth the first winter.\nAs you gaze at the sky that is gradually turning white, you realize that the world is coming to an end."
+        },
+        {
+          "id": 2,
+          "speaker": "Narrator",
+          "text": "You woke up from sleep. That was a strange dream."
+        },
+        {
+          "id": 3,
+          "speaker": "Narrator",
+          "text": "The jeep rattled along, emitting a pungent odor. Outside the hazy windows, sand and gravel continued to whip past.\nBeyond the horizon, there seemed to be nothing but vastness, as if the entire world consisted only of this desert."
+        },
+        {
+          "id": 4,
+          "speaker": "Narrator",
+          "text": "It's difficult to tell where is where, and it feels like you might be lost."
+        },
+        {
+          "id": 5,
+          "speaker": "???",
+          "text": "Have you woken up?"
+        },
+        {
+          "id": 6,
+          "speaker": "Narrator",
+          "text": "You turn around. You find a girl on the driver's seat of a Jeep. It seems like she's been driving this Jeep through the desert for a long time."
+        },
+        {
+          "id": 7,
+          "speaker": "???",
+          "text": "We'll be there in about thirty minutes. You can rest for a while.",
+          "continueTo": "ch0"
+        },
+        {
+          "id": 8,
+          "speaker": "Narrator",
+          "text": "That moment,"
+        },
+        {
+          "id": 9,
+          "speaker": "Narrator",
+          "text": "Suddenly,"
+        },
+        {
+          "id": 10,
+          "speaker": "Narrator",
+          "text": "a tremendous shock reverberates through the area."
+        },
+        {
+          "id": 11,
+          "speaker": "Narrator",
+          "text": "The car flips over, and everything blurs in sight. Gravity has been reversed, and they can't control their bodies."
+        },
+        {
+          "id": 12,
+          "speaker": "Narrator",
+          "text": "Even the touch of the girl's hand, which was holding onto you, only lasts for a moment before a deafening sound strikes your ears.",
+          "roll": "CON/dl13/dl14"
+        },
+        {
+          "id": 13,
+          "speaker": "Narrator",
+          "text": "You feel that the girl is no longer holding onto you.\nYour consciousness becomes hazy and blurry, and soon you begin to feel like you're about to lose consciousness. Eventually, you faint.",
+          "continueTo": "ep2"
+        },
+        {
+          "id": 14,
+          "speaker": "Narrator",
+          "text": "You faint.",
+          "continueTo": "ep2"
+        }
+      ],
+      "choices": [
+        {
+          "id": 0,
+          "prompts": [
+            {
+              "id": 0,
+              "text": "Ask where we are going."
+            }
+          ],
+          "consequences": [
+            {
+              "id": 0,
+              "text": "We're heading towards the bunker, struggling to prolong our lives as much as possible in this apocalyptic world.",
+              "continueTo": "dl8"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "dialogues": [
+        {
+          "id": 0,
+          "speaker": "Narrator",
+          "text": "You wake up from sleep. You feel a little dizzy."
+        },
+        {
+          "id": 1,
+          "speaker": "???",
+          "text": "20:17...You're awake."
+        },
+        {
+          "id": 2,
+          "speaker": "Narrator",
+          "text": "You look around. What surrounds you is a simple room."
+        },
+        {
+          "id": 3,
+          "speaker": "???",
+          "text": "We've arrived.",
+          "continueTo": "ch0"
+        },
+        {
+          "id": 4,
+          "speaker": "???",
+          "text": "You remember everything, right?",
+          "continueTo": "ch1"
+        },
+        {
+          "id": 5,
+          "speaker": "???",
+          "text": "I'm Lily. You are an android, and I'm your owner."
+        },
+        {
+          "id": 6,
+          "speaker": "Lily",
+          "text": "This bunker used to be a android research lab. It's where you were created."
+        },
+        {
+          "id": 7,
+          "speaker": "Narrator",
+          "text": "As an android, you suffered a significant shock during your escape and lost some of your memories.\nIn particular, there is very little information remaining in your memory about the end of the world."
+        },
+        {
+          "id": 8,
+          "speaker": "Lily",
+          "text": "It seems like your memory is damaged, but if we're here, we can find replacement parts."
+        },
+        {
+          "id": 9,
+          "speaker": "Narrator",
+          "text": "Lily checks on your condition. As an android who already lost some of their memories due to the previous shock, Lily worries about what additional damage may have been caused. She explains that the car has broken down.",
+          "roll": "INT/dl10/dl11"
+        },
+        {
+          "id": 10,
+          "speaker": "Narrator",
+          "text": "Snow is blowing everywhere, and surface devices are not working properly. Not only phones, but even small wristwatches and radios are not functioning. The androids, covered in bio-tissue, can move like humans, or like KPC, who is still holding on. It seems that the car has stopped due to this issue.",
+          "continueTo": "dl12"
+        },
+        {
+          "id": 11,
+          "speaker": "Narrator",
+          "text": "The car appears to be old and broken. During the days of constant running and hiding, there wasn't a single device that worked perfectly."
+        },
+        {
+          "id": 12,
+          "speaker": "Lily",
+          "text": "I didn't touch anything in this room until you woke up."
+        },
+        {
+          "id": 13,
+          "speaker": "Lily",
+          "text": "Do you remember the Three Laws of Robotics?"
+        },
+        {
+          "id": 14,
+          "speaker": "Narrator",
+          "text": "You remember the Three Laws of Robotics, which are the basic rules that all androids must follow."
+        },
+        {
+          "id": 15,
+          "speaker": "Narrator",
+          "text": "1. A robot may not injure a human being or, through inaction, allow a human being to come to harm.\n2. A robot must obey the orders given it by human beings except where such orders would conflict with the First Law.\n3. A robot must protect its own existence as long as such protection does not conflict with the First or Second Law.\n\nThese are the Three Laws of Robotics. They are the basic rules that all androids must follow."
+        },
+        {
+          "id": 16,
+          "speaker": "Narrator",
+          "text": "Even if an android loses their memories, they cannot forget the rules that are deeply ingrained in them. After hearing the explorer's response, Lily urges you to protect herself. You know it too.\nAs an android, you must protect Lily.\nEven if the world is on the brink of destruction, they cannot let go of anything as long as Lily is alive."
+        }
+      ],
+      "choices": [
+        {
+          "id": 0,
+          "prompts": [
+            {
+              "id": 0,
+              "text": "Ask where we are."
+            }
+          ],
+          "consequences": [
+            {
+              "id": 0,
+              "text": "We're in the bunker.",
+              "continueTo": "dl4"
+            }
+          ]
+        },
+        {
+          "id": 1,
+          "prompt": {
+            "id": 0,
+            "text": "No, I don't remember anything."
+          },
+          "consequences": [
+            {
+              "id": 0,
+              "text": "You don't remember anything? You don't remember anything at all?",
+              "continueTo": "dl5"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "dialogues": [
+        {
+          "id": 0,
+          "speaker": "Narrator",
+          "text": "You cannot just sit and wait for the end in a place like this.\nYou cannot let Lily, a human, die like this.\nYou must find a place to escape from the impending destruction, even if it means doing anything for Lily.\nYou can explore this bunker or try to go outside. Even though this is the place where android, you were created, having lost your memories, everything seems unfamiliar.",
+          "continueTo": "ch0"
+        },
+        {
+          "id": 1,
+          "speaker": "Narrator",
+          "text": "Hazy, dark clouds seem to be gathering from far away. Will they even cover the desert? It seems like it will take some time for them to arrive here.",
+          "roll": "INT/dl3/dl4"
+        },
+        {
+          "id": 2,
+          "speaker": "Narrator",
+          "text": "There is nothing but sand and gravel all around.\nIt's a desert, where all there is to see is the endless cycle of sand and gravel, sand and gravel, leaving one feeling despair.",
+          "roll": "INT/dl3/dl4"
+        },
+        {
+          "id": 3,
+          "speaker": "Narrator",
+          "text": "You recall how you got here.\nThe car overturned, and Lily, who was with me, helped me cross the desert, which would normally take 30 minutes by car. It must have been a challenging journey.",
+          "continueTo": "dl5"
+        },
+        {
+          "id": 4,
+          "speaker": "Narrator",
+          "text": "You cannot recall any information about the desert.\nYou cannot remember what kind of creatures live in this type of desert, but given that the world is on the brink of destruction,\nit doesn't seem to matter much.",
+          "continueTo": "dl5"
+        },
+        {
+          "id": 5,
+          "speaker": "Narrator",
+          "text": "Nothing else seems particularly interesting. You should probably explore the bunker now.",
+          "roll": "DEX/dl6/dl7"
+        },
+        {
+          "id": 6,
+          "speaker": "Narrator",
+          "text": "You almost stumbled and fell while coming down. You managed to regain my balance somehow.",
+          "continueTo": "ch0"
+        },
+        {
+          "id": 7,
+          "speaker": "Narrator",
+          "text": "You almost stumbled and fell while coming down, losing my balance.\nLily caught you and helped you regain my balance."
+        },
+        {
+          "id": 8,
+          "speaker": "Lily",
+          "text": "You should be more careful.",
+          "continueTo": "ch0"
+        },
+        {
+          "id": 9,
+          "speaker": "12.24",
+          "text": "Lazar has also left. I am the only one left in the lab.\nThe other researchers did not come back from their vacations. I do not lack the desire to leave, but the desire to complete this android comes first.\nChristmas will come again next year.\nI am filled with ambition to create an android that will work until the day the earth is destroyed.\nI will make it more human-like than any existing person."
+        },
+        {
+          "id": 10,
+          "speaker": "12.25",
+          "text": "I had cake at the research facility. It had been in the freezer for a long time, so it didn't taste great. There was no gift or anything by my bed. It's too hot here for Santa to come. They said the research facility will also be moved soon. We'll only keep the bunker for later use and demolish the rest of the facilities. It's fortunate. If I had to conduct more research in a place like this, I would have considered quitting. They said they built this research facility in the middle of the desert under the guise of top secret research. Neglecting the welfare of researchers can lead to harmful consequences like this. I heard voices outside. Maybe it's Santa?"
+        },
+        {
+          "id": 11,
+          "speaker": "12.31",
+          "text": "I can't believe it. I forgot to write in my research journal for a week. But I couldn't help it. I met an alien. If someone were to find this journal, I'd have to go to a different hospital for my health check-up. But it's true. A week ago, I saved a person who was dying in the middle of the desert. He was quite... a nice person. He seemed grateful to me. I don't know if I should call him a person. He introduced himself as a member of Great race of Yith. It might be considered an overstatement to call oneself great, but he was truly great. He could move his mind and travel through time."
+        },
+        {
+          "id": 12,
+          "speaker": "1.1",
+          "text": "It has been 24 hours since the Yith left. When they just left, I was so excited that I wrote in my journal, but now I feel a little lonely. It almost feels like the time spent with them was a dream. Looking at the gift they gave me, I know it's not, but still. They told me so many stories, and I want to meet them again someday to hear more. They said their species would treat humans well, and if I ever want to, I can go meet them anytime, so I'll keep that in mind."
+        },
+        {
+          "id": 13,
+          "speaker": "Narrator",
+          "text": "The research journal after this point has been torn out. The remaining pages are filled with unfamiliar words and research contents that are difficult to understand. Further investigation of the bookshelf requires Library Use roll.",
+          "roll": "Library Use/dl14/dl15"
+        },
+        {
+          "id": 14,
+          "speaker": "Narrator",
+          "text": "You discover a catalog. The text is faded and difficult to read, but there is a promotional phrase that says, \"An android utilizing biological tissue. Will become your perfect human companion. Excellent durability.\" There is also a description of the android model created in the research lab, along with introductions to other research labs. It is mentioned that there is only one android actually produced in this lab.",
+          "continueTo": "ch1"
+        },
+        {
+          "id": 15,
+          "speaker": "Narrator",
+          "text": "I have seen another journal of the researcher who stayed here. It says that because they moved to another research center after completing a project, there is only one android that was actually created here.",
+          "continueTo": "ch1"
+        }
+      ],
+      "choices": [
+        {
+          "id": 0,
+          "prompts": [
+            {
+              "id": 0,
+              "text": "Explore the bunker."
+            },
+            {
+              "id": 1,
+              "text": "Go outside."
+            }
+          ],
+          "consequences": [
+            {
+              "id": 0,
+              "text": "The room is desolate. The gray-painted walls seem to have aged, even in the stale air.\nThere is no movement, but Lily turned on the emergency power and a dim light from the light bulb is shining.\nThis place hasn't been used in decades since the laboratory moved.\nOn one side of the room, there is a bed and a makeshift bed, and on the other side, there is a space for a bathroom and a kitchen.\nThere are bookshelves and a desk on the opposite side.",
+              "continueTo": "ch1"
+            },
+            {
+              "id": 1,
+              "text": "If you go outside, there is only a vast desert. When you explore the bunker, you find a staircase that leads to the roof. Upon climbing it, you see a railing and a telescope covered in dust and dirt.",
+              "roll": "Spot Hidden/dl1/dl2"
+            }
+          ]
+        },
+        {
+          "id": 1,
+          "prompts": [
+            {
+              "id": 0,
+              "text": "Search the kitchen."
+            },
+            {
+              "id": 1,
+              "text": "Search the bookshelves."
+            },
+            {
+              "id": 2,
+              "text": "Search the desk."
+            }
+          ],
+          "consequences": [
+            {
+              "id": 0,
+              "text": "The kitchen area is simple, with a refrigerator, cabinets, and a sink. There are no signs of recent use, but the layers of dust suggest that it has been abandoned for quite some time. The appliances and furniture appear old and worn out.",
+              "continueTo": "ch2"
+            },
+            {
+              "id": 1,
+              "text": "There are several notebooks and machine-related books on the bookshelf. You have found the research journal of the person who stayed here.\nAccording to the journal, the person was developing androids. If you examine it, you might find a way to repair yourself... Among them, there is something strange that catches your eye.",
+              "continueTo": "dl9"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="CS30TBRPG:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/CS30TBRPG_jar</output-path>
+    <root id="archive" name="CS30TBRPG.jar">
+      <element id="module-output" name="CS30TBRPG" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/lib/gson-2.10.1.jar" path-in-jar="/" />
+      <element id="dir-copy" path="$PROJECT_DIR$/resources" />
+    </root>
+  </artifact>
+</component>
