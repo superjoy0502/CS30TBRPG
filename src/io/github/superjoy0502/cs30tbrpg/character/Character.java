@@ -6,6 +6,16 @@ import io.github.superjoy0502.cs30tbrpg.utilities.SuccessLevel;
 
 import java.util.ArrayList;
 
+/*-* Kaiyuan: Character
+ * It does not only make sense, but it is crucial to modularize Character, as there are many Characters such as NPCs, and of course the PlayerCharacter.
+ * Therefore by modularizing Character, we can reuse this class, and inherit the traits in other classes.
+ * 	- Character has many stats that were stored in the method setStats in the form of integers such as STR or strength
+ * 	- Character also has other traits that a person may have such as name, height, weight, etc and these are stored as strings
+ * 	- Character has an ArrayList for all the different <Skill>s someone may have, and these skills are set with the method getSkills
+ * 
+ * We do not need a constructor for Character
+ *  - By using the Gson library, an instance of Character is automatically constructed without a constructor being needed.
+ */
 public class Character {
     public String name;
     public String height;
