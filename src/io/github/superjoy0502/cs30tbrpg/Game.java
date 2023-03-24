@@ -135,9 +135,8 @@ public class Game {
                 // Next dialogue
                 currentPos = idToPos(episodeId, "dl", dialogueId + 1);
             }
-        } else if (dialogue.getContinueTo().equals("lost")) {
-            // TODO Lost function
-            System.out.println("You lost.");
+        } else if (dialogue.getContinueTo().equals("end")) {
+            System.out.println("The End.");
             System.exit(0);
         } else {
             currentPos = idToPos(episodeId, dialogue.getContinueTo());
