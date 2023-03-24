@@ -223,6 +223,9 @@ public class Character {
             case "LUK":
                 value = LUK;
                 break;
+            case "SAN":
+                value = SAN;
+                break;
             default:
                 Skill skill = getSkill(SkillType.fromString(target));
                 if (skill == null) {

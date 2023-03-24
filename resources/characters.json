@@ -27,319 +27,241 @@
     "damageBonus": "+1d4",
     "skills": [
       {
-        "name": "Accounting",
         "value": 5
       },
       {
-        "name": "Acting",
         "value": 5
       },
       {
-        "name": "Animal Handling",
         "value": 5
       },
       {
-        "name": "Anthropology",
         "value": 1
       },
       {
-        "name": "Appraise",
         "value": 5
       },
       {
-        "name": "Archaeology",
         "value": 1
       },
       {
-        "name": "Artillery",
         "value": 1
       },
       {
-        "name": "Astronomy",
         "value": 1
       },
       {
-        "name": "Axe",
         "value": 15
       },
       {
-        "name": "Biology",
         "value": 1
       },
       {
-        "name": "Botany",
         "value": 1
       },
       {
-        "name": "Bow",
         "value": 15
       },
       {
-        "name": "Brawl",
         "value": 70
       },
       {
-        "name": "Chainsaw",
         "value": 10
       },
       {
-        "name": "Charm",
         "value": 15
       },
       {
-        "name": "Chemistry",
         "value": 10
       },
       {
-        "name": "Climb",
         "value": 20
       },
       {
-        "name": "Computer Use",
         "value": 5
       },
       {
-        "name": "Credit Rating",
         "value": 0
       },
       {
-        "name": "Cryptography",
         "value": 1
       },
       {
-        "name": "Cthulhu Mythos",
         "value": 0
       },
       {
-        "name": "Demolitions",
         "value": 1
       },
       {
-        "name": "Disguise",
         "value": 5
       },
       {
-        "name": "Diving",
         "value": 1
       },
       {
-        "name": "Dodge",
         "value": 45
       },
       {
-        "name": "Drive Auto",
         "value": 20
       },
       {
-        "name": "Electrical Repair",
         "value": 10
       },
       {
-        "name": "Electronics",
         "value": 1
       },
       {
-        "name": "Fast Talk",
         "value": 60
       },
       {
-        "name": "Fine Art",
         "value": 5
       },
       {
-        "name": "First Aid",
         "value": 30
       },
       {
-        "name": "Flail",
         "value": 10
       },
       {
-        "name": "Flamethrower",
         "value": 10
       },
       {
-        "name": "Forensics",
         "value": 1
       },
       {
-        "name": "Forgery",
         "value": 5
       },
       {
-        "name": "Garrote",
         "value": 15
       },
       {
-        "name": "Geology",
         "value": 1
       },
       {
-        "name": "Handgun",
         "value": 20
       },
       {
-        "name": "Heavy Weapons",
         "value": 10
       },
       {
-        "name": "History",
         "value": 5
       },
       {
-        "name": "Hypnosis",
         "value": 1
       },
       {
-        "name": "Intimidate",
         "value": 15
       },
       {
-        "name": "Jump",
         "value": 20
       },
       {
-        "name": "Language (Other)",
         "option": "English",
         "value": 1
       },
       {
-        "name": "Language (Own)",
         "option": "Japanese",
         "value": 65
       },
       {
-        "name": "Law",
         "value": 5
       },
       {
-        "name": "Library Use",
         "value": 70
       },
       {
-        "name": "Listen",
         "value": 65
       },
       {
-        "name": "Locksmith",
         "value": 1
       },
       {
-        "name": "Lore",
         "value": 1
       },
       {
-        "name": "Machine Gun",
         "value": 10
       },
       {
-        "name": "Mathematics",
         "value": 10
       },
       {
-        "name": "Mechanical Repair",
         "value": 40
       },
       {
-        "name": "Medicine",
         "value": 1
       },
       {
-        "name": "Meteorology",
         "value": 1
       },
       {
-        "name": "Natural World",
         "value": 10
       },
       {
-        "name": "Navigate",
         "value": 10
       },
       {
-        "name": "Occult",
         "value": 5
       },
       {
-        "name": "Operate Heavy Machinery",
         "value": 1
       },
       {
-        "name": "Persuade",
         "value": 10
       },
       {
-        "name": "Pilot",
         "option": "",
         "value": 1
       },
       {
-        "name": "Psychoanalysis",
         "value": 1
       },
       {
-        "name": "Psychology",
         "value": 10
       },
       {
-        "name": "Read Lips",
         "value": 1
       },
       {
-        "name": "Ride",
         "value": 5
       },
       {
-        "name": "Rifle/Shotgun",
         "value": 25
       },
       {
-        "name": "Sleight of Hand",
         "value": 10
       },
       {
-        "name": "Spear",
         "value": 20
       },
       {
-        "name": "Spot Hidden",
         "value": 65
       },
       {
-        "name": "Stealth",
         "value": 20
       },
       {
-        "name": "Submachine Gun",
         "value": 70
       },
       {
-        "name": "Survival",
         "option": "",
         "value": 10
       },
       {
-        "name": "Sword",
         "value": 20
       },
       {
-        "name": "Swim",
         "value": 20
       },
       {
-        "name": "Throw",
         "value": 20
       },
       {
-        "name": "Track",
         "value": 10
       },
       {
-        "name": "Whip",
         "value": 5
       },
       {
-        "name": "Zoology",
         "value": 1
       }
     ]

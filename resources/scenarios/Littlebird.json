@@ -159,6 +159,29 @@
           "name": "The Painting",
           "text": "『His body was torn to shreds by the treacherous dagger』",
           "continueTo": "dl7"
+        },
+        {
+          "id": 7,
+          "name": "Littlebird",
+          "text": "That's my mom and dad.",
+          "continueTo": "ch1"
+        },
+        {
+          "id": 8,
+          "name": "Narrator",
+          "text": "It's quiet. There doesn't seem to be any sign of anyone walking around here and there.",
+          "continueTo": "ch1"
+        },
+        {
+          "id": 9,
+          "name": "Narrator",
+          "text": "There are tranquilizers on the cosmetics shelf.",
+          "continueTo": "ch2"
+        },
+        {
+          "id": 10,
+          "text": "You discover a key to the basement.",
+          "continueTo": "ch3"
         }
       ],
       "choices": [
@@ -207,6 +230,46 @@
               "id": 0,
               "text": "You explore the living room.",
               "continueTo": "ch1"
+            },
+            {
+              "id": 1,
+              "text": "You explore the washroom.\nThe bathroom mirror is shattered, and there is red writing scribbled on it.",
+              "continueTo": "ch2"
+            },
+            {
+              "id": 2,
+              "text": "You explore the bathroom.\nAs soon as the door is opened, a foul smell wafts out. There is a pool of dark red liquid in the bathtub.",
+              "continueTo": "ch3"
+            },
+            {
+              "id": 3,
+              "text": "You explore the kitchen.\nThe kitchen is messy and dirty dishes are piled up. It seems that a refrigerator and a storage cabinet are placed in the corner.",
+              "continueTo": "ch4"
+            },
+            {
+              "id": 4,
+              "text": "You explore the passage.",
+              "continueTo": "ch5"
+            },
+            {
+              "id": 5,
+              "text": "You explore the room.",
+              "continueTo": "ch6"
+            },
+            {
+              "id": 6,
+              "text": "You explore the basement.",
+              "continueTo": "ch7"
+            },
+            {
+              "id": 7,
+              "text": "You explore the entrance.",
+              "continueTo": "ch8"
+            },
+            {
+              "id": 8,
+              "text": "You head to the second floor.",
+              "continueTo": "ch9"
             }
           ]
         },
@@ -232,13 +295,17 @@
             {
               "id": 4,
               "text": "Observe the entrance"
+            },
+            {
+              "id": 5,
+              "text": "Go somewhere else"
             }
           ],
           "consequences": [
             {
               "id": 0,
               "text": "Hi.",
-              "continueTo": "ch2"
+              "continueTo": "ch1"
             },
             {
               "id": 1,
@@ -254,13 +321,103 @@
               "id": 3,
               "text": "There are beautiful men and women in their 30s drawn. The woman looks has a gorgeous blonde hair.",
               "roll": "Spot Hidden/dl5/dl7"
+            },
+            {
+              "id": 4,
+              "text": "It's a door.",
+              "roll": "Listen/dl8/dl2"
+            },
+            {
+              "id": 5,
+              "text": "You decide to leave the living room and go somewhere else.",
+              "continueTo": "ch0"
             }
           ]
         },
         {
           "id": 2,
-          "prompts": [],
-          "consequences": []
+          "prompts": [
+            {
+              "id": 0,
+              "text": "Examine the writing"
+            },
+            {
+              "id": 1,
+              "text": "Examine the shelf"
+            },
+            {
+              "id": 2,
+              "text": "Ask Littlebird about the writing"
+            },
+            {
+              "id": 3,
+              "text": "Go somewhere else"
+            }
+          ],
+          "consequences": [
+            {
+              "id": 0,
+              "text": "\u001B[31m『 Lacie ordered me to kill her !!!!! 』\u001B[31m",
+              "continueTo": "ch2"
+            },
+            {
+              "id": 1,
+              "text": "You examine the shelf.",
+              "roll": "Listen/dl9/dl2"
+            },
+            {
+              "id": 2,
+              "text": "The boy shakes his head in fear.",
+              "continueTo": "ch2"
+            },
+            {
+              "id": 3,
+              "text": "You decide to leave the washroom and go somewhere else.",
+              "continueTo": "ch0"
+            }
+          ]
+        },
+        {
+          "id": 3,
+          "prompts": [
+            {
+              "id": 0,
+              "text": "Search the tub"
+            },
+            {
+              "id": 1,
+              "text": "Go somewhere else"
+            }
+          ],
+          "consequences": [
+            {
+              "id": 0,
+              "text": "You search the tub.",
+              "continueTo": "dl10"
+            },
+            {
+              "id": 1,
+              "text": "You decide to leave the bathroom and go somewhere else.",
+              "continueTo": "ch0"
+            }
+          ]
+        },
+        {
+          "id": 4,
+          "prompts": [
+            {
+              "id": 0,
+              "text": "Search the refrigerator"
+            },
+            {
+              "id": 1,
+              "text": "Search the cabinet"
+            },
+            {
+              "id": 2,
+              "text": "Go somewhere else"
+            }
+          ]
         }
       ]
     }
