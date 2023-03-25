@@ -97,7 +97,11 @@ public class Menu {
             System.out.print("Please select a scenario >> ");
             int scenarioIndex = -1;
             while (true) {
-                scenarioIndex = Integer.parseInt(scanner.nextLine());
+                try {
+                    scenarioIndex = Integer.parseInt(scanner.nextLine());
+                } catch (Exception e) {
+                    continue;
+                }
                 if (scenarioIndex == 0) {
                     break;
                 }
@@ -230,7 +234,11 @@ public class Menu {
             System.out.print("Please select a character >> ");
             int characterIndex = -1;
             while (true) {
-                characterIndex = Integer.parseInt(scanner.nextLine());
+                try {
+                    characterIndex = Integer.parseInt(scanner.nextLine());
+                } catch (Exception e) {
+                    continue;
+                }
                 if (characterIndex == 0) {
                     break;
                 }

@@ -6,11 +6,10 @@
   <component name="ChangeListManager">
     <list default="true" id="657cecd3-3d59-4cf6-982e-e90e549b4383" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/characters.json" beforeDir="false" afterPath="$PROJECT_DIR$/resources/characters.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/saves.json" beforeDir="false" afterPath="$PROJECT_DIR$/resources/saves.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/scenarios.json" beforeDir="false" afterPath="$PROJECT_DIR$/resources/scenarios.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/scenarios/Atopos.json" beforeDir="false" afterPath="$PROJECT_DIR$/resources/scenarios/Atopos.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/io/github/superjoy0502/cs30tbrpg/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/io/github/superjoy0502/cs30tbrpg/Game.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/io/github/superjoy0502/cs30tbrpg/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/io/github/superjoy0502/cs30tbrpg/Menu.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/io/github/superjoy0502/cs30tbrpg/scenario/Battle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/io/github/superjoy0502/cs30tbrpg/scenario/Battle.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -55,7 +54,7 @@
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
     &quot;extract.method.default.visibility&quot;: &quot;private&quot;,
-    &quot;last.edited.regexp&quot;: &quot;ep0dl0&quot;,
+    &quot;last.edited.regexp&quot;: &quot;ep0&quot;,
     &quot;last_opened_file_path&quot;: &quot;C:/Users/super/Documents/GitHub/CS30TBRPG/resources&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
@@ -141,6 +140,7 @@
       <workItem from="1679490906021" duration="4861000" />
       <workItem from="1679555616526" duration="6187000" />
       <workItem from="1679670242376" duration="2488000" />
+      <workItem from="1679702694049" duration="965000" />
     </task>
     <servers />
   </component>

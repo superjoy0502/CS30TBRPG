@@ -231,6 +231,9 @@ public class Game {
     }
 
     private String idToPos(int episodeId, String id) {
+        if (id.startsWith("ep")) {
+            return id;
+        }
         return "ep" + episodeId + id;
     }
 

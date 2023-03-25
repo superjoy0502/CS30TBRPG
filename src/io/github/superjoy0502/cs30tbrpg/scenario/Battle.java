@@ -12,7 +12,7 @@ public class Battle {
     private List<Character> allies; // The 0th element of this list is always the player character
     private String continueTo;
 
-    public boolean battle() {
+    /*public boolean battle() {
         boolean playerWin = true;
         while (enemies.size() > 0 && allies.size() > 0) {
             for (Character enemy : enemies) {
@@ -56,7 +56,7 @@ public class Battle {
             }
         }
         return playerWin;
-    }
+    }*/
     
     private int getTotalDamage(int damage, String damageBonus) {
     	return damage + Dice.roll(damageBonus);

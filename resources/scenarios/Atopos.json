@@ -80,13 +80,13 @@
           "id": 13,
           "speaker": "Narrator",
           "text": "You feel that the girl is no longer holding onto you.\nYour consciousness becomes hazy and blurry, and soon you begin to feel like you're about to lose consciousness. Eventually, you faint.",
-          "continueTo": "ep2"
+          "continueTo": "ep2dl0"
         },
         {
           "id": 14,
           "speaker": "Narrator",
           "text": "You faint.",
-          "continueTo": "ep2"
+          "continueTo": "ep2dl0"
         }
       ],
       "choices": [
@@ -101,6 +101,7 @@
           "consequences": [
             {
               "id": 0,
+              "speaker": "Lily",
               "text": "We're heading towards the bunker, struggling to prolong our lives as much as possible in this apocalyptic world.",
               "continueTo": "dl8"
             }
@@ -213,6 +214,7 @@
           "consequences": [
             {
               "id": 0,
+              "speaker": "Lily",
               "text": "We're in the bunker.",
               "continueTo": "dl4"
             }
@@ -227,6 +229,7 @@
           "consequences": [
             {
               "id": 0,
+              "speaker": "Lily",
               "text": "You don't remember anything? You don't remember anything at all?",
               "continueTo": "dl5"
             }
@@ -626,11 +629,13 @@
           "consequences": [
             {
               "id": 0,
+              "speaker": "Narrator",
               "text": "The room is desolate. The gray-painted walls seem to have aged, even in the stale air.\nThere is no movement, but Lily turned on the emergency power and a dim light from the light bulb is shining.\nThis place hasn't been used in decades since the laboratory moved.\nOn one side of the room, there is a bed and a makeshift bed, and on the other side, there is a space for a bathroom and a kitchen.\nThere are bookshelves and a desk on the opposite side.",
               "continueTo": "ch1"
             },
             {
               "id": 1,
+              "speaker": "Narrator",
               "text": "If you go outside, there is only a vast desert. When you explore the bunker, you find a staircase that leads to the roof. Upon climbing it, you see a railing and a telescope covered in dust and dirt.",
               "roll": "Spot Hidden/dl1/dl2"
             }
@@ -663,26 +668,31 @@
           "consequences": [
             {
               "id": 0,
+              "speaker": "Narrator",
               "text": "The kitchen area is simple, with a refrigerator, cabinets, and a sink. There are no signs of recent use, but the layers of dust suggest that it has been abandoned for quite some time. The appliances and furniture appear old and worn out.",
               "continueTo": "ch2"
             },
             {
               "id": 1,
+              "speaker": "Narrator",
               "text": "There are several notebooks and machine-related books on the bookshelf. You have found the research journal of the person who stayed here.\nAccording to the journal, the person was developing androids. If you examine it, you might find a way to repair yourself... Among them, there is something strange that catches your eye.",
               "continueTo": "dl9"
             },
             {
               "id": 2,
+              "speaker": "Narrator",
               "text": "There are computers and communication devices that have not been turned on for a long time. It seems that the communication device's content is being checked on the computer. Now that the emergency generator is turned on, both the communication device and the computer are turning on. There is a toolbox under the desk.",
               "continueTo": "ch3"
             },
             {
               "id": 3,
+              "speaker": "Narrator",
               "text": "",
               "continueTo": "ch0"
             },
             {
               "id": 4,
+              "speaker": "Narrator",
               "text": "After looking around the bunker, Lily suggests having dinner. Androids are designed to be able to eat with humans and gain energy from the process. Lily brings out emergency rations heated in a coffee pot. The menu includes canned pickled vegetables, biscuits, and meatballs. The taste isn't great, but drinking a vitamin drink made with orange powder doesn't make them feel too bad. You've been through tough times where it was difficult to eat properly.",
               "continueTo": "dl27"
             }
@@ -711,21 +721,25 @@
           "consequences": [
             {
               "id": 0,
+              "speaker": "Narrator",
               "text": "When you open the large refrigerator, you feel the cool air. Inside, there's only one delicious-looking cake.",
               "roll": "Spot Hidden/dl16/dl17"
             },
             {
               "id": 1,
+              "speaker": "Narrator",
               "text": "There is emergency food inside. It is enough to eat for three months, fitting for a bunker. There may not be enough time to finish all the food, but it is still there.",
               "continueTo": "ch2"
             },
             {
               "id": 2,
+              "speaker": "Narrator",
               "text": "There are metal dishes and utensils placed here. When you open the faucet, cool water comes out. There is also a coffee pot to heat up food.",
               "continueTo": "ch2"
             },
             {
               "id": 3,
+              "speaker": "Narrator",
               "text": "",
               "continueTo": "ch1"
             }
@@ -750,16 +764,19 @@
           "consequences": [
             {
               "id": 0,
+              "speaker": "Narrator",
               "text": "There are various tools inside such as a hammer and screwdriver. There are no noticeable special parts. There is a piece of crumpled paper on the top.",
               "roll": "Spot Hidden/dl18/dl19"
             },
             {
               "id": 1,
+              "speaker": "Narrator",
               "text": "When you turn on the computer, the status of the communication device appears and it is normal. Satellite communication is used for communication in the desert. You can send messages to other research institutes through the chat window. Real-time satellite photos appear on one side.",
               "continueTo": "ch4"
             },
             {
               "id": 2,
+              "speaker": "Narrator",
               "text": "",
               "continueTo": "ch2"
             }
@@ -788,21 +805,25 @@
           "consequences": [
             {
               "id": 0,
+              "speaker": "Narrator",
               "text": "To send a message through the chat window, a luck roll is required.",
               "roll": "LUK/dl20/dl21"
             },
             {
               "id": 1,
+              "speaker": "Narrator",
               "text": "There is an image of the Earth displayed, and you can even rotate it with the mouse. However, what is in front of me is a black sphere. The blue planet is gone, leaving only a murky whirlpool.",
               "roll": "Spot Hidden/dl22/dl23"
             },
             {
               "id": 2,
+              "speaker": "Narrator",
               "text": "When you close the chat window and satellite image window, there is a shared folder on the desktop where you can check for materials uploaded from other places. Fortunately, it seems that access is still possible. When you check it, there is a video file.",
               "continueTo": "dl25"
             },
             {
               "id": 3,
+              "speaker": "Narrator",
               "text": "",
               "continueTo": "ch3"
             }
@@ -823,11 +844,13 @@
           "consequences": [
             {
               "id": 0,
+              "speaker": "Narrator",
               "text": "",
               "continueTo": "dl31"
             },
             {
               "id": 1,
+              "speaker": "Narrator",
               "text": "",
               "continueTo": "dl31"
             }
@@ -844,6 +867,7 @@
           "consequences": [
             {
               "id": 0,
+              "speaker": "Lily",
               "text": "Great, I'll be waiting for you.",
               "continueTo": "dl35"
             }
@@ -860,6 +884,7 @@
           "consequences": [
             {
               "id": 0,
+              "speaker": "Lily",
               "text": "I'm sorry, but I can't use it. You have to.",
               "continueTo": "ch8"
             }
@@ -876,6 +901,7 @@
           "consequences": [
             {
               "id": 0,
+              "speaker": "Lily",
               "text": "I'm sorry, but I can't use it. You have to.",
               "continueTo": "dl46"
             }
@@ -900,16 +926,19 @@
           "consequences": [
             {
               "id": 0,
+              "speaker": "Narrator",
               "text": "ED1. He brought them out of darkness and the shadow of death and broke their chains.\nPsalm 107:14 (KRV)",
               "continueTo": "dl56"
             },
             {
               "id": 1,
-              "text": "ED2. But the rest of the beasts had their dominion taken away: yet their lives were prolonged for a season and time.\nDaniel 7:12 KJV"
+              "speaker": "Narrator",
+              "text": "ED2. But the rest of the beasts had their dominion taken away: yet their lives were prolonged for a season and time.\nDaniel 7:12 KJV",
               "continueTo": "dl60"
             },
             {
               "id": 2,
+              "speaker": "Narrator",
               "text": "ED3. Surely their destruction will come suddenly; who knows the ruin of the two of them?\nProverbs 24:22 NIV",
               "continueTo": "dl63"
             }
